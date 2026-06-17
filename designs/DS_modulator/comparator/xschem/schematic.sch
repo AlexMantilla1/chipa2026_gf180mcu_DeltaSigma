@@ -16,10 +16,10 @@ N 220 240 220 270 {lab=#net1}
 N 210 270 220 270 {lab=#net1}
 N 210 190 210 210 {lab=#net2}
 N 310 290 310 320 {lab=#net1}
-N 310 380 310 420 {lab=vdd}
-N 310 350 320 350 {lab=vdd}
-N 320 350 320 380 {lab=vdd}
-N 310 380 320 380 {lab=vdd}
+N 310 380 310 420 {lab=gnd}
+N 310 350 320 350 {lab=gnd}
+N 320 350 320 380 {lab=gnd}
+N 310 380 320 380 {lab=gnd}
 N 250 350 270 350 {lab=clk}
 N 410 170 410 210 {lab=#net3}
 N 210 170 210 190 {lab=#net2}
@@ -255,10 +255,10 @@ spiceprefix=X
 C {ipin.sym} 170 240 0 0 {name=p1 lab=vin1}
 C {ipin.sym} 450 240 2 0 {name=p2 lab=vin2
 }
-C {ipin.sym} 250 350 0 0 {name=p3 lab=clk}
 C {ipin.sym} -140 20 0 0 {name=p4 lab=clk}
-C {ipin.sym} 760 10 2 0 {name=p5 lab=clk}
 C {ipin.sym} 310 -70 1 0 {name=p6 lab=vdd}
 C {iopin.sym} 470 90 0 0 {name=p7 lab=vout2}
 C {iopin.sym} 150 90 2 0 {name=p8 lab=vout1}
 C {ipin.sym} 310 420 3 0 {name=p9 lab=gnd}
+C {lab_pin.sym} 250 350 0 0 {name=p3 sig_type=std_logic lab=clk}
+C {lab_pin.sym} 760 10 2 0 {name=p5 sig_type=std_logic lab=clk}
