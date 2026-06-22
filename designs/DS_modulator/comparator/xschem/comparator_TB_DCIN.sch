@@ -5,47 +5,46 @@ V {}
 S {}
 F {}
 E {}
-N -190 120 -190 160 {lab=0}
-N -310 120 -230 120 {lab=0}
-N -230 120 -160 120 {lab=0}
-N -310 20 -310 60 {lab=VIN1}
-N -230 20 -230 60 {lab=VIN2}
-N -160 20 -160 60 {lab=VDD}
-N 180 130 180 160 {lab=0}
-N -160 120 -100 120 {lab=0}
-N -80 20 -80 60 {lab=clk}
-N -100 120 -80 120 {lab=0}
-N 270 30 320 30 {lab=out1}
-N 270 70 320 70 {lab=out2}
-N 50 90 80 90 {lab=VIN2}
-N 50 10 80 10 {lab=VIN1}
-N 180 -60 180 -30 {lab=VDD}
-N 50 50 80 50 {lab=clk}
-C {vsource.sym} -310 90 0 0 {name=V1 value=0.5 savecurrent=false}
-C {vsource.sym} -230 90 0 0 {name=V2 value=0.2 savecurrent=false}
-C {vsource.sym} -160 90 0 0 {name=V3 value=1 savecurrent=false}
-C {gnd.sym} -190 160 0 0 {name=l1 lab=0}
-C {gnd.sym} 180 160 0 0 {name=l2 lab=0}
-C {vsource.sym} -80 90 0 0 {name=V4 value="pulse(0 1 0 1n 1n 49n 100n)" savecurrent=false}
-C {lab_pin.sym} -310 20 0 0 {name=p1 sig_type=std_logic lab=VIN1}
-C {lab_pin.sym} 50 10 0 0 {name=p2 sig_type=std_logic lab=VIN1}
-C {lab_pin.sym} 50 90 0 0 {name=p3 sig_type=std_logic lab=VIN2}
-C {lab_pin.sym} -230 20 0 0 {name=p4 sig_type=std_logic lab=VIN2}
-C {lab_pin.sym} -160 20 0 0 {name=p5 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} 180 -60 1 0 {name=p6 sig_type=std_logic lab=VDD}
-C {opin.sym} 320 30 0 0 {name=p7 lab=out1}
-C {opin.sym} 320 70 0 0 {name=p8 lab=out2}
-C {lab_pin.sym} -80 20 0 0 {name=p9 sig_type=std_logic lab=clk}
-C {lab_pin.sym} 50 50 0 0 {name=p10 sig_type=std_logic lab=clk}
-C {code_shown.sym} 490 60 0 0 {name=SIM1 only_toplevel=false value="
+N -210 220 -210 260 {lab=0}
+N -330 220 -250 220 {lab=0}
+N -250 220 -180 220 {lab=0}
+N -330 120 -330 160 {lab=vin1}
+N -250 120 -250 160 {lab=vin2}
+N -180 120 -180 160 {lab=vdd}
+N -180 220 -120 220 {lab=0}
+N -100 120 -100 160 {lab=clk}
+N -120 220 -100 220 {lab=0}
+N -330 -40 -330 120 {lab=vin1}
+N -330 -40 -60 -40 {lab=vin1}
+N -250 40 -250 120 {lab=vin2}
+N -250 40 -60 40 {lab=vin2}
+N -100 -0 -100 120 {lab=clk}
+N -100 -0 -60 0 {lab=clk}
+N -210 240 40 240 {lab=0}
+N 40 80 40 240 {lab=0}
+N -180 -150 -180 120 {lab=vdd}
+N -180 -150 40 -150 {lab=vdd}
+N 40 -150 40 -80 {lab=vdd}
+C {vsource.sym} -330 190 0 0 {name=V1 value=0.5 savecurrent=false}
+C {vsource.sym} -250 190 0 0 {name=V2 value="PWL(0 0 500n 1)" savecurrent=false}
+C {vsource.sym} -180 190 0 0 {name=V3 value=1 savecurrent=false}
+C {gnd.sym} -210 260 0 0 {name=l1 lab=0}
+C {vsource.sym} -100 190 0 0 {name=V4 value="pulse(0 1 0 1n 1n 49n 100n)" savecurrent=false}
+C {lab_pin.sym} -330 120 0 0 {name=p1 sig_type=std_logic lab=vin1
+}
+C {lab_pin.sym} -250 120 0 0 {name=p4 sig_type=std_logic lab=vin2}
+C {lab_pin.sym} -180 120 0 0 {name=p5 sig_type=std_logic lab=vdd
+}
+C {lab_pin.sym} -100 120 0 0 {name=p9 sig_type=std_logic lab=clk}
+C {code_shown.sym} 230 60 0 0 {name=SIM1 only_toplevel=false value="
 .control
 tran 0.1n 500n
 .save all
 .endc"}
-C {devices/code_shown.sym} 420 -70 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} 160 -70 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
-C {DS_modulator/comparator/xschem/schematic.sym} 170 50 0 0 {name=x2}
+C {schematic.sym} 30 0 0 0 {name=x1}
