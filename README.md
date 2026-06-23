@@ -10,36 +10,9 @@ This project implements a second-order, discrete-time $\Delta\Sigma$ modulator. 
 
 ### Modulator Block Diagram
 
-Below is the discrete-time implementation block diagram of the second-order $\Delta\Sigma$ modulator showing the loop filter coefficients (0.1 and 0.26) and the feedback loops:
+Below is the initial proposed discrete-time implementation block diagram of the second-order $\Delta\Sigma$ modulator showing the loop filter coefficients (0.1 and 0.26) and the feedback loops. Note that these coefficients may be adjusted during the development and verification phases in order to optimize system linearity.
 
-```mermaid
-flowchart LR
-    u["Input u(t)"] --> g1["0.1"]
-    g1 --> add1["(+)"]
-    add1 --> int1["Integrator 1<br>(z⁻¹/² / 1 - z⁻¹)"]
-    int1 --> g2["0.26"]
-    g2 --> add2["(+)"]
-    add2 --> int2["Integrator 2<br>(z⁻¹/² / 1 - z⁻¹)"]
-    int2 --> quant["Quantizer"]
-    quant --> v["Output v(n)"]
-    
-    v --> DAC
-    DAC --> del1["z⁻¹/²"]
-    del1 --> fb2["0.26"]
-    fb2 -->| - | add2
-    
-    del1 --> del2["z⁻¹/²"]
-    del2 --> fb1["0.1"]
-    fb1 -->| - | add1
-
-    style u fill:#f9f,stroke:#333,stroke-width:2px
-    style v fill:#bbf,stroke:#333,stroke-width:2px
-    style quant fill:#ff9,stroke:#333,stroke-width:2px
-```
-
-> [!NOTE]
-> *Placeholder for the modulator block diagram image:*
-> ![Modulator Block Diagram](docs/modulator_block_diagram.png)
+![Second-Order Delta-Sigma System Block Diagram](docs/img/Second-Order_DS_Sys_Block.jpg)
 
 ---
 
@@ -48,29 +21,26 @@ flowchart LR
 1. **Switched-Capacitor Loop Filter**: By replacing standard Operational Transconductance Amplifiers (OTAs) with dynamic ring amplifiers, the loop filter achieves robust heavy-load driving capabilities and an open-loop gain exceeding $60\text{ dB}$.
 2. **Extreme Supply Voltage Scaling**: The supply voltage can be significantly scaled down—potentially close to the sum of the PMOS and NMOS threshold voltages ($V_{th,p} + V_{th,n}$)—without compromising speed or gain at audio bandwidths.
 3. **Dynamic Power Efficiency**: Due to its inverter-like dynamic operation, the ring amplifier automatically enters an efficient power-down/tri-state state once the charge transfer/integration phase concludes, saving static power.
-4. **Ring Amplifier Architecture**:
-   * **Stage 1**: Fast, high-gain input inverter.
-   * **Stage 2**: Inverter stage with dead-zone configuration (via a transmission gate for bias control VGP/VGN) to degenerate the dead-zone and stabilize the system.
-   * **Stage 3**: Output charging inverter stage capable of driving heavy capacitive loads with a rail-to-rail swing.
+4. **Ring Amplifier & Switched-Capacitor Integrator**:
 
-```mermaid
-flowchart LR
-    in["Input (in)"] --> Stage1["Stage 1: Input Inverter<br>(M1, M2)"]
-    Stage1 --> Vo_fs["Vo_fs"]
-    Vo_fs --> Stage2["Stage 2: Dead-Zone Control<br>(M3, M4, M7, M8)"]
-    Stage2 --> VGP["VGP"]
-    Stage2 --> VGN["VGN"]
-    VGP --> Stage3["Stage 3: Output Stage<br>(M5, M6)"]
-    VGN --> Stage3
-    Stage3 --> out["Output (out)"]
+![Switched-Capacitor Integrator with Ring Amplifier](docs/img/Integrator_with_rinamp.png)
 
-    style in fill:#f9f,stroke:#333,stroke-width:1px
-    style out fill:#bbf,stroke:#333,stroke-width:1px
-```
+---
 
-> [!NOTE]
-> *Placeholder for the Ring Amplifier schematic image:*
-> ![Ring Amplifier Schematic](docs/ring_amp_schematic.png)
+## Pin Requirements
+
+The table below lists the pin requirements for this Delta-Sigma modulator:
+
+| Number | Name | Type | Direction |
+| :---: | :--- | :--- | :--- |
+| 1 | VSS | Ground | Bidirectional |
+| 2 | VDD | 3V Power | Bidirectional |
+| 3 | VINP | Analog | Input |
+| 4 | VINN | Analog | Input |
+| 5 | VCM | Analog | Bidirectional |
+| 6 | CLK | Digital | Input |
+| 7 | RESET | Digital | Input |
+| 8 | YOUT | Digital | Output |
 
 ---
 
@@ -93,8 +63,7 @@ designs/
     ├── integrator/              # Switched-capacitor integrator
     ├── ring_amp/                # Single-ended Ring Amplifier core
     ├── ring_amp_diff/           # Fully differential Ring Amplifier
-    ├── std_cells_layout_utils/  # Standard cells layout utilities
-    └── testing/                 # Testbenches and simulation files
+    ├── std_cells_layout_utils/  # Standard cells layout utilities 
 docs/
 ├── OnchipDS - Proposal Presentation.pdf  # Project proposal presentation slides
 └── README.md                             # Repository team git workflow guide
@@ -105,16 +74,27 @@ first_setup.sh               # Shell script for initial repository setup
 
 ## Getting Started
 
-Clone the repository and run the setup script:
+### For Reviewers & Users
+
+To clone and explore the design:
 
 ```bash
 git clone git@github.com:AlexMantilla1/chipa2026_gf180mcu_DeltaSigma.git
 cd chipa2026_gf180mcu_DeltaSigma
-./first_setup.sh
 ```
 
 > [!IMPORTANT]
-> Always open **xschem** inside the repository root directory to ensure library references resolve correctly.
+> Always open **xschem** inside the `designs/` directory to ensure library references resolve correctly.
+
+### For Project Contributors
+
+If you are a contributor working on a sub-block, run the setup script to configure local git settings, install pre-commit hooks, and switch to your assigned block branch:
+
+```bash
+./first_setup.sh
+```
+
+For detailed collaboration rules and branch management, refer to the [Git Workflow Guide](docs/README.md).
 
 ---
 
@@ -135,6 +115,7 @@ Affiliated with the **Onchip Research Group** from the **Universidad Industrial 
 * **Repository**: [GitHub Link](https://github.com/AlexMantilla1/chipa2026_gf180mcu_DeltaSigma)
 * **Git Workflow Guide**: [docs/README.md](docs/README.md)
 * **Project Proposal**: [docs/OnchipDS - Proposal Presentation.pdf](docs/OnchipDS%20-%20Proposal%20Presentation.pdf)
+* **Pin Requirements**: [Google Sheets Link](https://docs.google.com/spreadsheets/d/1fApMbtZSiq5V2GvFwdgLzX3I5TPhH-cjsxK9vVr4s4A/edit?usp=sharing)
 
 ---
 
