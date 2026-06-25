@@ -41,7 +41,7 @@ Although first-order noise shaping attenuates much of the quantization noise, a 
 The clocked dynamic architecture is the natural choice here because the DSM already provides a clock, the power budget for an integrated analog design is limited,
 and the regenerative gain of the latch is far superior to what an open-loop static comparator can achieve within the same time window.
 
-Reference: R. Schreier and G. Temes, "Understanding Delta-Sigma Data Converters," IEEE Press / Wiley, 2005, Chap. 2.
+Reference: [R. Schreier and G. Temes, *Understanding Delta-Sigma Data Converters*, IEEE Press / Wiley, 2005, Chap. 2](https://web.eecs.umich.edu/~mosharaf/Readings/DeltaSigma.pdf)
 
 ## Specs
 
