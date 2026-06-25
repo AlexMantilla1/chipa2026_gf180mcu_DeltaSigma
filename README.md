@@ -4,13 +4,13 @@
 
 ## 1. Overview
 
-This block is a **clock voltage doubler** (clock booster). It takes the system clock CLK, which swings between 0 and V_DD, and produces a boosted clock CLKD that swings between 0 and 2·V_DD, in phase with the input and at the same frequency. The doubler is built from a pump capacitor **C_D** and five switches **S0–S4**. Operation alternates between two phases of CLK: in one phase the capacitor is charged to V_DD (precharge) while the output is reset to ground; in the other phase the charged capacitor is level-shifted so that its top plate, and therefore the output, reaches the 2·V_DD level. As a result a doubled clock waveform suitable for driving the switches of the modulator.
+This block is a **clock voltage doubler** (clock booster). It takes the system clock CLK, which swings between 0 and V_DD, and produces a boosted clock CLKD that swings between 0 and 2·V_DD, in phase with the input and at the same frequency. The doubler is built from a pump capacitor **C_D** and five switches **S0–S4**. Operation alternates between two phases of CLK: in one phase the capacitor is charged to V_DD (precharge) while the output is reset to ground; in the other phase the charged capacitor is level-shifted so that its top plate, and therefore the output, reaches the 2·V_DD level. This operation results in a doubled clock waveform which is suitable for driving the switches of the modulator.
 
 ## 2. Role in the Delta-Sigma Modulator
 
 The modulator is a switched-capacitor (SC) circuit: its integrators sample and transfer charge through analog switches gated by the clock. At a low supply (e.g., V_DD = 1.5 V) a switch whose gate is driven only to V_DD has a high resistance and it cannot pass a full-swing signal. As a consequence, incomplete settling, signal-dependent charge error, and distortion degrades the modulator's linearity (SNDR) and dynamic range.
 
-Clock boosting solves this by creating *"another voltage domain"*: the switches are actuated by a clock that reaches 2·V_DD. With this boosted gate drive, simple **NMOS-only** switches turn fully on across the entire input range, giving a low, signal-independent on-resistance and rail-to-rail operation. This lets the SC integrators sample and settle correctly at low supply, which is essential for the modulator to meet its accuracy target. The doubler therefore supplies the boosted clock CLKD that gates the critical sampling/charge-transfer switches throughout the modulator. (See Section VI.B, "Clock Boosting", of the reference below.)
+Clock boosting solves this by creating *"another voltage domain"*: the switches are actuated by a clock that reaches 2·V_DD. With this boosted gate drive, simple **NMOS-only** switches turn fully on across the entire input range, giving a low, signal-independent on-resistance and rail-to-rail operation. This lets the SC integrators sample and settle correctly at low supply. The doubler therefore supplies the boosted clock CLKD that gates the critical sampling/charge-transfer switches throughout the modulator.
 
 ## 3. Short Analysis
 
@@ -43,7 +43,7 @@ so the fractional droop below 2·V_DD is ≈ C_L/C_D for C_D ≫ C_L. To keep th
 ## 4. Specifications
 
 | Spec | Comment | Target min | Target typ | Target max | Sch min | Sch typ | Sch max | Layout min | Layout typ | Layout max |
-|---|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|---|
 | V_DD | ±10 % | 1.35 V | 1.5 V | 1.65 V | – | – | – | – | – | – |
 | f_clk | | 4 MHz | 4.5 MHz | 5 MHz | – | – | – | – | – | – |
 | Boost loss vs 2·V_DD | C_L/C_D droop | – | 1 % | 2 % | – | – | – | – | – | – |
@@ -53,5 +53,8 @@ so the fractional droop below 2·V_DD is ≈ C_L/C_D for C_D ≫ C_L. To keep th
 
 ## References
 
-- A. J. Mantilla Rios, D. F. Gómez Serrano, and L. E. Rueda Guerrero, *Power Reduction Techniques for Low-Voltage Delta-Sigma Modulators*, Universidad Industrial de Santander. Section VI.B "Clock Boosting", Fig. 22 and eq. (13).
+- A. J. Mantilla Rios, D. F. Gómez Serrano, and L. E. Rueda Guerrero, *Power Reduction Techniques for Low-Voltage Delta-Sigma Modulators*, Universidad Industrial de Santander.
+- J. A. Starzyk, Ying-Wei Jan and Fengjing Qiu, "A DC-DC charge pump design based on voltage doublers," in IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications, vol. 48, no. 3, pp. 350-359, March 2001, doi: 10.1109/81.915390.
+
+
 
