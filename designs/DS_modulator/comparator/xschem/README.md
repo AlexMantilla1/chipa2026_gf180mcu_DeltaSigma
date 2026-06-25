@@ -25,7 +25,7 @@ It achieves this by oversampling the input at a frequency much higher than the N
 The comparator acts as the 1-bit quantizer at the core of the modulator loop. In each clock cycle, a decision is made as to whether the output of the loop filter (a chain of integrators) is above or below a reference level,
 producing a "1" or a "0". This binary decision is fed back via a 1-bit DAC to the input summing node, closing the feedback loop that drives the quantization error toward zero over time.
 
-## Esquemático del comparador
+## Comparator schematic
 
 ![Esquemático](img/DSM.png)
 
@@ -43,10 +43,8 @@ and the regenerative gain of the latch is far superior to what an open-loop stat
 
 Reference: R. Schreier and G. Temes, "Understanding Delta-Sigma Data Converters," IEEE Press / Wiley, 2005, Chap. 2.
 
+## Specs
 
 Specs to comparator
-
-## Especificaciones
-
 ![Specs](img/SPECS.png)
 
