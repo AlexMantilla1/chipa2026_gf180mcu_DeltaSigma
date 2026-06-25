@@ -14,6 +14,10 @@ Clock boosting solves this by creating *"another voltage domain"*: the switches 
 
 ## 3. Short Analysis
 
+![Doubler schematic — pump capacitor C_D and switches S0–S4 mapping CLK (0→V_DD) to CLKD (0→2·V_DD).](img/doubler.png)
+
+*Figure 1. Doubler schematic: pump capacitor C_D and switches S0–S4.*
+
 The circuit is a **clock voltage doubler** built around a pump capacitor **C_D**. It maps the input clock CLK (0 → V_DD) to a boosted, in-phase clock CLKD (0 → 2·V_DD) at the same frequency. Its purpose, per the reference, is to create "another voltage domain" so the switched-capacitor switches can be actuated at 2·V_DD and therefore pass a full-swing signal at low V_DD. Operation is governed by the two states of CLK:
 
 **Precharge phase — CLK = V_SS.** Switches **S0, S2, S4** are on. **S2** charges the upper plate of C_D to V_DD while **S0** holds the lower plate at V_SS, so C_D is charged with its upper terminal positive:
