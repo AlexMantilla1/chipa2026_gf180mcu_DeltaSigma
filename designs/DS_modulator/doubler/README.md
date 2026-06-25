@@ -57,8 +57,9 @@ so the fractional droop below 2·V_DD is ≈ C_L/C_D for C_D ≫ C_L. To keep th
 
 ## References
 
-- A. J. Mantilla Rios, D. F. Gómez Serrano, and L. E. Rueda Guerrero, *Power Reduction Techniques for Low-Voltage Delta-Sigma Modulators*, Universidad Industrial de Santander.
-- J. A. Starzyk, Ying-Wei Jan and Fengjing Qiu, "A DC-DC charge pump design based on voltage doublers," in IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications, vol. 48, no. 3, pp. 350-359, March 2001, doi: 10.1109/81.915390.
+[1] A. J. Mantilla Rios, D. F. Gómez Serrano, and L. E. Rueda Guerrero, "Power reduction techniques for low-voltage delta-sigma modulators," Univ. Ind. de Santander, Bucaramanga, Colombia, 2023. 
+
+[2] J. A. Starzyk, Y.-W. Jan, and F. Qiu, "A DC-DC charge pump design based on voltage doublers," *IEEE Trans. Circuits Syst. I, Fundam. Theory Appl.*, vol. 48, no. 3, pp. 350–359, Mar. 2001, doi: 10.1109/81.915390.
 
 
 
