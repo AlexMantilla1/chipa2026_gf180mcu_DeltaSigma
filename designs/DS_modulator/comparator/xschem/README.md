@@ -48,4 +48,4 @@ Reference: [Delta-Sigma Modulator Design Example](https://d1.amobbs.com/bbs_uplo
 Specs to comparator
 ![Specs](img/SPECS.png)
 
-Reference: Reference: [MAX49140 Ultra-Low-Power Comparator Datasheet (Analog Devices)](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX49140.pdf)
+Reference: [MAX49140 Ultra-Low-Power Comparator Datasheet (Analog Devices)](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX49140.pdf)
