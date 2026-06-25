@@ -1,4 +1,4 @@
-Comparator — Clocked Dynamic Comparator
+## Comparator — Clocked Dynamic Comparator
 
 1. General Description
 
