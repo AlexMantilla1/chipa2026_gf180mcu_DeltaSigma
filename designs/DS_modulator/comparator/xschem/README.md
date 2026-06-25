@@ -1,6 +1,6 @@
 ## Comparator — Clocked Dynamic Comparator
 
-1. General Description
+General Description
 
 A comparator is a circuit that receives two analog input voltages and produces a digital output indicating which of the two is greater. 
 Unlike a continuous-time amplifier, a clocked dynamic comparator does not draw static current from the power supply. 
@@ -17,7 +17,7 @@ The comparator implemented here is designed to operate using the GF180MCU 180 nm
 matching the oversampling frequency of the Delta-Sigma modulator system.
 
 
-2. Role in the Delta-Sigma Modulator
+Role in the Delta-Sigma Modulator
 
 A Delta-Sigma Modulator (DSM) is a mixed-signal system that converts an analog input signal into a high-speed digital bitstream.
 It achieves this by oversampling the input at a frequency much higher than the Nyquist frequency and shaping the quantization noise so that it falls outside the band of interest, where it can be removed by a digital decimation filter.
