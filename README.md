@@ -30,7 +30,7 @@ At the same time **S4** forces the output to CLKD = V_SS, resetting the load.
 V_CLKD = V_DD + V_CD = 2·V_DD
 ```
 
-**Finite-load correction.** The load capacitance C_L (gate capacitance of the switches CLKD drives) absorbs part of the charge stored on C_D. Because S4 fully discharges CLKD each cycle, charge conservation on the boosted node gives the reference's eq. (13):
+**Finite-load correction.** The load capacitance C_L (gate capacitance of the switches CLKD drives) absorbs part of the charge stored on C_D. Because S4 fully discharges CLKD each cycle, charge conservation on the boosted node gives following equation:
 
 ```
               2·V_DD
