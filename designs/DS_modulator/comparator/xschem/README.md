@@ -48,3 +48,4 @@ Reference: [R. Schreier and G. Temes, *Understanding Delta-Sigma Data Converters
 Specs to comparator
 ![Specs](img/SPECS.png)
 
+Reference: Reference: [MAX49140 Ultra-Low-Power Comparator Datasheet (Analog Devices)](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX49140.pdf)
