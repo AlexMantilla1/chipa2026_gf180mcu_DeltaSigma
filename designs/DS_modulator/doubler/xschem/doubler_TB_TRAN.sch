@@ -18,7 +18,7 @@ N 550 -280 550 -215 {lab=VSS}
 N 340 -235 340 -190 {lab=0}
 N 340 -315 340 -295 {lab=clk}
 N 340 -320 340 -315 {lab=clk}
-C {doubler/xschem/doubler.sym} 550 -360 0 0 {name=x1}
+C {DS_modulator/doubler/xschem/doubler.sym} 550 -360 0 0 {name=x1}
 C {capa.sym} 740 -280 0 0 {name=C1
 m=1
 value=50f
@@ -62,6 +62,9 @@ plot v(clk)
 
 setplot clkd
 plot v(clkd) v(x1.CLKb)
+
+setplot vcd
+plot v(x1.Vcd_up) v(x1.Vcd_down)
 
 write doubler_TB_TRAN.raw
 .endc
