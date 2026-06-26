@@ -47,6 +47,15 @@ Reference: [Delta-Sigma Modulator Design Example](https://d1.amobbs.com/bbs_uplo
 
 The first identified cause preventing the correct operation of the circuit is insufficient gain, attributed primarily to inadequate sizing of the input differential pair. This limitation is further compounded by the lack of proper sizing of both the PMOS and NMOS latches, which compromises the overall performance of the comparator block. Additionally, the switches present in the design have not been optimized in terms of their geometric parameters; since a larger channel width (W) combined with a minimum channel length (L) results in faster switching, keeping them at the standard dimensions provided by the PDK represents a significant constraint on the correct operation of the circuit.
 
+A more detailed analysis is provided in the following images.
+
+![Analysis](img/FUN1.png)
+(img/FUN2.png)
+(img/FUN3.png)
+(img/FUN4.png)
+(img/FUN5.png)
+
+
 ## Specs
 
 Specs to comparator
