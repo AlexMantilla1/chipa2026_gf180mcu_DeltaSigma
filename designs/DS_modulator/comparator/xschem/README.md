@@ -50,11 +50,10 @@ The first identified cause preventing the correct operation of the circuit is in
 A more detailed analysis is provided in the following images.
 
 ![Analysis](img/FUN1.png)
-(img/FUN2.png)
-(img/FUN3.png)
-(img/FUN4.png)
-(img/FUN5.png)
-
+![Analysis](img/FUN2.png)
+![Analysis](img/FUN3.png)
+![Analysis](img/FUN4.png)
+![Analysis](img/FUN5.png)
 
 ## Specs
 
