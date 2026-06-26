@@ -43,6 +43,10 @@ and the regenerative gain of the latch is far superior to what an open-loop stat
 
 Reference: [Delta-Sigma Modulator Design Example](https://d1.amobbs.com/bbs_upload782111/files_17/ourdev_464768.pdf)
 
+## Analysis
+
+The first identified cause preventing the correct operation of the circuit is insufficient gain, attributed primarily to inadequate sizing of the input differential pair. This limitation is further compounded by the lack of proper sizing of both the PMOS and NMOS latches, which compromises the overall performance of the comparator block. Additionally, the switches present in the design have not been optimized in terms of their geometric parameters; since a larger channel width (W) combined with a minimum channel length (L) results in faster switching, keeping them at the standard dimensions provided by the PDK represents a significant constraint on the correct operation of the circuit.
+
 ## Specs
 
 Specs to comparator
