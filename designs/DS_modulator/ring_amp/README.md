@@ -92,10 +92,10 @@ The following specifications are preliminary design targets intended to guide th
 | Spec | Comment | Target min | Target typ | Target max | Sch min | Sch typ | Sch max | Layout min | Layout typ | Layout max |
 |---|---|---|---|---|---|---|---|---|---|---|
 | V_DD | Supply voltage (±10%) | 1.35 V | 1.50 V | 1.65 V | – | – | – | – | – | – |
-| f_clk | Modulator clock frequency | 4 MHz | – | 5 MHz | – | – | – | – | – | – |
-| DC Gain | Open-loop low-frequency gain | – | 60 dB | – | – | – | – | – | – | – |
-| Output Swing | Operating output range | 0.1 V | – | 1.4 V | – | – | – | – | – | – |
-| Dead-Zone Voltage | Generated dead-zone magnitude | TBD | TBD | TBD | – | – | – | – | – | – |
+| f_clk | Modulator clock frequency | – | – | 5 MHz | – | – | – | – | – | – |
+| C_L | Load Capaciance | – | TBD | – | – | – | – | – | – | – |
+| DC Gain | Open-loop low-frequency gain | – | 70 dB | – | – | – | – | – | – | – |
+| Output Swing | Operating output range | 0.6*VDD | – | – | – | – | – | – | – | – |
 | Average Power | RingAmp contribution to power budget | – | TBD | – | – | – | – | – | – | – |
 
 ## References

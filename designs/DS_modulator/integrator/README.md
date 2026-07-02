@@ -82,9 +82,10 @@ The following specifications are preliminary design targets intended to guide th
 | ------------------------- | --------------------------------------- | ---------- | ---------- | ---------- | ------- | ------- | ------- | ---------- | ---------- | ---------- |
 | V_DD                      | Supply voltage (±10%)                   | 1.35 V     | 1.50 V     | 1.65 V     | –       | –       | –       | –          | –          | –          |
 | f_clk                     | Modulator clock frequency               | 4 MHz      | 4.5 MHz    | 5 MHz      | –       | –       | –       | –          | –          | –          |
-| Settling Time             | Amplification phase settling            | –          | 30 ns      | 50 ns      | –       | –       | –       | –          | –          | –          |
-| Differential Output Swing | Available output signal range           | TBD        | TBD        | TBD        | –       | –       | –       | –          | –          | –          |
-| Integration Error                | Due to finite amplifier gain and other effects           | –          | TBD        | TBD        | –       | –       | –       | –          | –          | –          |
+| C_L                       | Load Capaciance                         | –          | TBD        | –          | –       | –       | –       |      –          | –          | –          |
+| Settling Time             | Amplification phase settling            | –          | –          | 50 ns      | –       | –       | –       | –          | –          | –          |
+| Differential Output Swing | Available output signal range           | TBD        | –          | –          | –       | –       | –       | –          | –          | –          |
+| Integration Error                | Due to finite amplifier gain and other effects           | –          | –         | TBD        | –       | –       | –       | –          | –          | –          |
 | Average Power             | Integrator contribution to power budget | –          | TBD        | –          | –       | –       | –       | –          | –          | –          |
 
 ## References
