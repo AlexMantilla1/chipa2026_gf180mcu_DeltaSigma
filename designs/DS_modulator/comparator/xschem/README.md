@@ -50,6 +50,7 @@ The first identified cause preventing the correct operation of the circuit is in
 # Dynamic Latch Comparator
 
 ![Comparator Schematic](img/S-ARM.png)
+B. Razavi, "The StrongARM Latch: A Circuit for All Seasons," *IEEE Solid-State Circuits Magazine*, pp. 12–17, Spring 2015. doi: 10.1109/MSSC.2015.2418155.
 
 **Key properties:**
 1. No static power consumption
