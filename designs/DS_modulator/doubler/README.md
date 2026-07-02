@@ -45,6 +45,7 @@ $$V_{CLKD} = \frac{2 \cdot V_{DD}}{1 + C_L / C_D}$$
 so the fractional droop below $2 \cdot V_{DD}$ is ≈ $C_L/C_D$ for $C_D ≫ C_L$. To keep the loss small, $C_D$ must be made large compared with the load $C_L$ (e.g. $C_D \geq 100·C_L \text{for} < 1$ % droop).
 
 ## 4. Specifications
+The following table presents the main specifications that we are aiming to achieve for this design. The values presented here will be measured both in schematic (Sch) simulations and post-layout (PL) simulations.
 
 | Symbol | Units | Spec Min | Spec Typ | Spec Max | Sch Min | Sch Typ | Sch Max | PL Min | PL Typ | PL Max | Comment |
 |---|---|---|---|---|---|---|---|---|---|---|---|
