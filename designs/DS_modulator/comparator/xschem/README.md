@@ -143,6 +143,25 @@ $$
 ## Specs
 
 Specs to comparator
-![Specs](img/SPECS.png)
+
+| Especificación | Símbolo | Min (Target) | Typ (Target) | Max (Target) | Min (SCH) | Typ (SCH) | Max (SCH) | Min (Layout) | Typ (Layout) | Max (Layout) | Unidad |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tensión de alimentación | VDD | 1.35 | 1.5 | 1.65 | 1.35 | 1.5 | 1.65 | 1.35 | 1.5 | 1.65 | V |
+| Frecuencia de reloj | f_CLK | 4 | 5 | TBS | 4 | 5 | TBS | 4 | 5 | TBS | MHz |
+| Retardo de propagación | t_PD | | 50 | 100 | TBS | 40 | 90 | TBS | 55 | 110 | ns |
+| Tensión de offset en entrada | V_OS | TBS | 5 | 20 | TBS | 8 | 25 | TBS | 10 | 30 | mV |
+| Rango de modo común en entrada | V_CM | 0.3 | 0.75 | 1.2 | 0.3 | 0.75 | 1.2 | 0.35 | 0.75 | 1.15 | V |
+| Overdrive mínimo de entrada | V_OD | TBS | 10 | TBS | TBS | 8 | TBS | TBS | 12 | TBS | mV |
+| Tensión de salida alta | V_OH | 1.4 | 1.5 | | 1.35 | 1.45 | | 1.3 | 1.42 | | V |
+| Tensión de salida baja | V_OL | TBS | 0 | 0.1 | TBS | 0 | 0.15 | TBS | 0 | 0.2 | V |
+| Consumo de potencia | P | TBS | 50 | 100 | TBS | 60 | 120 | TBS | 70 | 140 | µW |
+| Tiempo de regeneración | τ | TBS | 5 | 15 | TBS | 6 | 18 | TBS | 8 | 22 | ns |
+| Slew rate de salida | SR | 10 | 30 | TBS | 8 | 25 | TBS | 6 | 20 | TBS | V/µs |
+| CMRR | CMRR | 35 | 50 | TBS | 30 | 45 | TBS | 28 | 42 | TBS | dB |
+| PSRR | PSRR | 35 | 45 | TBS | 30 | 42 | TBS | 28 | 38 | TBS | dB |
+| Margen de fase (lazo DSM) | PM | 45 | 60 | TBS | 45 | 55 | TBS | 40 | 52 | TBS | ° |
+| Margen de ganancia (lazo DSM) | GM | 6 | 10 | TBS | 6 | 9 | TBS | 5 | 8 | TBS | dB |
+| Temperatura de operación | T_A | -40 | 27 | 125 | -40 | 27 | 125 | -40 | 27 | 125 | °C |
+
 
 Reference: [MAX49140 Ultra-Low-Power Comparator Datasheet (Analog Devices)](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX49140.pdf)
