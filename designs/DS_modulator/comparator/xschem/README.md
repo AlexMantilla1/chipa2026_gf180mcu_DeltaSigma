@@ -47,13 +47,97 @@ Reference: [Delta-Sigma Modulator Design Example](https://d1.amobbs.com/bbs_uplo
 
 The first identified cause preventing the correct operation of the circuit is insufficient gain, attributed primarily to inadequate sizing of the input differential pair. This limitation is further compounded by the lack of proper sizing of both the PMOS and NMOS latches, which compromises the overall performance of the comparator block. Additionally, the switches present in the design have not been optimized in terms of their geometric parameters; since a larger channel width (W) combined with a minimum channel length (L) results in faster switching, keeping them at the standard dimensions provided by the PDK represents a significant constraint on the correct operation of the circuit.
 
-A more detailed analysis is provided in the following images.
+# Dynamic Latch Comparator
 
-![Analysis](img/FUN1.png)
-![Analysis](img/FUN2.png)
-![Analysis](img/FUN3.png)
-![Analysis](img/FUN4.png)
-![Analysis](img/FUN5.png)
+![Comparator Schematic](img/S-ARM.png)
+
+**Key properties:**
+1. No static power consumption
+2. Rail-to-rail output
+3. Its input-referred offset comes from a single differential pair
+
+**Topology:**
+- 4 switches → S₁, S₂, S₃, and S₄
+- 2 coupled pairs → M₃–M₄ and M₅–M₆
+
+---
+
+## Phase (1): Pre-charge
+
+- CK is at a low level; M₁ and M₂ are off.
+- Common nodes P, Q, X, and Y are **pre-charged to V_DD**.
+
+---
+
+## Phase (2): Amplification
+
+- When CK goes high, switches S₁–S₄ turn off.
+- M₁ and M₂ turn on.
+- A differential current proportional to V_in1 − V_in2 is generated.
+
+Initially, M₃–M₆ remain off. This current discharges capacitors C_P and C_Q, so V_P − V_Q increases.
+
+The tail current is approximately constant.
+
+$$
+V_P - V_Q \approx \left(\frac{g_{m1,2}}{C_P}\right)(V_{in1} - V_{in2})\, t
+$$
+
+where $C_P = C_Q$.
+
+---
+
+## Phase (3): Turn-on of the Cross-Coupled NMOS Pair
+
+V_P and V_Q decrease until reaching $V_{DD} - V_{THN}$, at which point M₃–M₄ begin to conduct.
+
+The amplification time is given by:
+
+$$
+t_{amp} = \frac{C_P V_{THN}}{I_{CM}}
+$$
+
+where $I_{CM}$ is the common-mode current of each capacitance.
+
+The voltage gain in this stage is:
+
+$$
+A_v = \frac{g_{m1,2}\, V_{THN}}{I_{CM}}
+$$
+
+$+\Delta I$ and $-\Delta I$ are the differential pair currents. These currents produce an unequal discharge of the X and Y nodes, driving one node toward V_DD and the other toward GND.
+
+This represents a natural response of the form:
+
+$$
+e^{-t/\tau_{reg}}
+$$
+
+where $\tau_{reg}$ is the regeneration time constant:
+
+$$
+\tau_{reg} = \frac{C_{XY}}{g_{m3,4}\left(1 - \dfrac{C_{PQ}}{C_{XY}}\right)}
+$$
+
+---
+
+## Phase (4): Positive Feedback (PMOS Latch)
+
+The output voltages V_X and V_Y decrease until reaching $V_{DD} - V_{THP}$; at that point M₅ and M₆ conduct, entering Phase (4).
+
+- **Positive feedback** builds up around transistors M₅ and M₆: one output goes to V_DD and the other to GND.
+- **M₃ and M₄** eliminate the continuous (static) current path between V_DD and GND → *eliminates static current*.
+- **M₅ and M₆** restore the output high level up to V_DD.
+- **S₁ and S₂** pre-charge nodes X and Y to V_DD, ensuring M₅ and M₆ remain off during the initial amplification stage.
+- **S₃ and S₄** pre-charge the P and Q nodes, reducing the dynamic offset.
+
+---
+
+## Power Consumption
+
+$$
+P = f_{CK}\left(2C_{PQ} + C_{XY}\right)V_{DD}^2
+$$
 
 ## Specs
 
