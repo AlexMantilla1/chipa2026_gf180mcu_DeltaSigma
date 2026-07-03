@@ -51,7 +51,7 @@ The following table presents the main specifications that we are aiming to achie
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | $V_{DD}$ | [V] | 1.35 | 1.5 | 1.65 | – | – | – | – | – | – | $\pm 10\,\%$ |
 | $f_{clk}$ | [MHz] | 4 | 4.5 | 5 | – | – | – | – | – | – | Modulator clock rate |
-| Boost loss | [%] | – | – | 1 / 2 / 5 | – | – | 0.90 / 1.67 / 3.89 | – | – | – | Droop vs $2\,V_{DD}$ for $C_L = 10\,/\,20\,/\,50$ fF; # of switch loads = TBD |
+| Boost loss | [%] | – | – | 1 / 2 / 5 | – | 0.90 / 1.67 / 3.89 | – | – | – | – | Droop vs $2\,V_{DD}$ for $C_L = 10\,/\,20\,/\,50$ fF; # of switch loads = TBD |
 | $t_r$ | [ns] | – | 5 | – | – | 1.67 / 2.29 / 3.83 | – | – | – | – | Rise time (10–90 %), fit within half-period; for $C_L = 10\,/\,20\,/\,50$ fF |
 | $t_s$ | [ns] | – | – | 20 | – | 3.12 / 3.92 / 7.24 | – | – | – | – | Settling to final value; for $C_L = 10\,/\,20\,/\,50$ fF |
 | $P_{avg}$ | [µW] | – | TBD | – | – | 0.63 / 1.02 / 2.22 | – | – | – | – | Doubler contribution to power budget; for $C_L = 10\,/\,20\,/\,50$ fF |
