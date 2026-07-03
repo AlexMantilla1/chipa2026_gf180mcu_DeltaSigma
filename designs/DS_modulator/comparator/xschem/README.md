@@ -144,24 +144,24 @@ $$
 
 Specs to comparator
 
-| Specification | Symbol | Unit | Min (Target) | Typ (Target) | Max (Target) | Min (SCH) | Typ (SCH) | Max (SCH) | Min (Layout) | Typ (Layout) | Max (Layout) |
+| Specification | Symbol | Units | Min (Target) | Typ (Target) | Max (Target) | Min (SCH) | Typ (SCH) | Max (SCH) | Min (Layout) | Typ (Layout) | Max (Layout) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Supply Voltage | VDD | V | 1.35 | 1.5 | 1.65 | 1.35 | 1.5 | 1.65 | 1.35 | 1.5 | 1.65 |
-| Clock Frequency | f_CLK | MHz | 4 | 5 | TBS | 4 | 5 | TBS | 4 | 5 | TBS |
-| Propagation Delay | t_PD | ns | | 50 | 100 | TBS | 40 | 90 | TBS | 55 | 110 |
-| Input Offset Voltage | V_OS | mV | TBS | 5 | 20 | TBS | 8 | 25 | TBS | 10 | 30 |
-| Input Common-Mode Range | V_CM | V | 0.3 | 0.75 | 1.2 | 0.3 | 0.75 | 1.2 | 0.35 | 0.75 | 1.15 |
-| Minimum Input Overdrive | V_OD | mV | TBS | 10 | TBS | TBS | 8 | TBS | TBS | 12 | TBS |
-| Output High Voltage | V_OH | V | 1.4 | 1.5 | | 1.35 | 1.45 | | 1.3 | 1.42 | |
-| Output Low Voltage | V_OL | V | TBS | 0 | 0.1 | TBS | 0 | 0.15 | TBS | 0 | 0.2 |
-| Power Consumption | P | µW | TBS | 50 | 100 | TBS | 60 | 120 | TBS | 70 | 140 |
-| Regeneration Time | τ | ns | TBS | 5 | 15 | TBS | 6 | 18 | TBS | 8 | 22 |
-| Output Slew Rate | SR | V/µs | 10 | 30 | TBS | 8 | 25 | TBS | 6 | 20 | TBS |
-| Common-Mode Rejection Ratio | CMRR | dB | 35 | 50 | TBS | 30 | 45 | TBS | 28 | 42 | TBS |
-| Power Supply Rejection Ratio | PSRR | dB | 35 | 45 | TBS | 30 | 42 | TBS | 28 | 38 | TBS |
-| Phase Margin (DSM Loop) | PM | ° | 45 | 60 | TBS | 45 | 55 | TBS | 40 | 52 | TBS |
-| Gain Margin (DSM Loop) | GM | dB | 6 | 10 | TBS | 6 | 9 | TBS | 5 | 8 | TBS |
-| Operating Temperature | T_A | °C | -40 | 27 | 125 | -40 | 27 | 125 | -40 | 27 | 125 |
+| Supply Voltage | VDD | [V] | 1.35 | 1.5 | 1.65 | 1.35 | 1.5 | 1.65 | 1.35 | 1.5 | 1.65 |
+| Clock Frequency | f_CLK | [MHz] | 4 | 5 | TBS | 4 | 5 | TBS | 4 | 5 | TBS |
+| Propagation Delay | t_PD | [ns] | | 50 | 100 | TBS | 40 | 90 | TBS | 55 | 110 |
+| Input Offset Voltage | V_OS | [mV] | TBS | 5 | 20 | TBS | 8 | 25 | TBS | 10 | 30 |
+| Input Common-Mode Range | V_CM | [V] | 0.3 | 0.75 | 1.2 | 0.3 | 0.75 | 1.2 | 0.35 | 0.75 | 1.15 |
+| Minimum Input Overdrive | V_OD | [mV] | TBS | 10 | TBS | TBS | 8 | TBS | TBS | 12 | TBS |
+| Output High Voltage | V_OH | [V] | 1.4 | 1.5 | | 1.35 | 1.45 | | 1.3 | 1.42 | |
+| Output Low Voltage | V_OL | [V] | TBS | 0 | 0.1 | TBS | 0 | 0.15 | TBS | 0 | 0.2 |
+| Power Consumption | P | [µW] | TBS | 50 | 100 | TBS | 60 | 120 | TBS | 70 | 140 |
+| Regeneration Time | τ | [ns] | TBS | 5 | 15 | TBS | 6 | 18 | TBS | 8 | 22 |
+| Output Slew Rate | SR | [V/µs] | 10 | 30 | TBS | 8 | 25 | TBS | 6 | 20 | TBS |
+| Common-Mode Rejection Ratio | CMRR | [dB] | 35 | 50 | TBS | 30 | 45 | TBS | 28 | 42 | TBS |
+| Power Supply Rejection Ratio | PSRR | [dB] | 35 | 45 | TBS | 30 | 42 | TBS | 28 | 38 | TBS |
+| Phase Margin (DSM Loop) | PM | [°] | 45 | 60 | TBS | 45 | 55 | TBS | 40 | 52 | TBS |
+| Gain Margin (DSM Loop) | GM | [dB] | 6 | 10 | TBS | 6 | 9 | TBS | 5 | 8 | TBS |
+| Operating Temperature | T_A | [°C] | -40 | 27 | 125 | -40 | 27 | 125 | -40 | 27 | 125 |
 
 
 Reference: [MAX49140 Ultra-Low-Power Comparator Datasheet (Analog Devices)](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX49140.pdf)
