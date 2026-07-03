@@ -29,6 +29,14 @@ producing a "1" or a "0". This binary decision is fed back via a 1-bit DAC to th
 
 ![Esquemático](img/comparator.png)
 
+## Comparator symbol
+
+
+![Symbol](img/symbol.png)
+
+
+
+
 
 The quality of the modulator depends critically on the comparator meeting two requirements:
 
