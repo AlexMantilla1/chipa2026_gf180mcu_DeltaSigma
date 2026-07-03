@@ -76,9 +76,7 @@ N 370 -760 370 -680 {lab=VSS}
 N 370 -300 370 -220 {lab=VSS}
 N 1240 -480 1240 -430 {lab=Vcm}
 C {title.sym} 290 -70 0 0 {name=l1 author="Onchip"}
-C {designs/DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -620 0 0 {name=x1}
-C {designs/DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -360 2 1 {name=x2}
-C {symbols/nfet_03v3.sym} 1130 -420 1 0 {name=M1
+C {symbols/nfet_03v3.sym} 1350 -200 3 0 {name=M1
 L=0.28u
 W=0.22u
 nf=1
@@ -92,7 +90,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/nfet_03v3.sym} 1130 -200 3 0 {name=M2
+C {symbols/nfet_03v3.sym} 1350 -420 1 0 {name=M2
 L=0.28u
 W=0.22u
 nf=1
@@ -134,7 +132,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/nfet_03v3.sym} 1350 -420 3 1 {name=M5
+C {symbols/nfet_03v3.sym} 1130 -200 1 1 {name=M5
 L=0.28u
 W=0.22u
 nf=1
@@ -148,7 +146,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/nfet_03v3.sym} 1350 -200 1 1 {name=M6
+C {symbols/nfet_03v3.sym} 1130 -420 3 1 {name=M6
 L=0.28u
 W=0.22u
 nf=1
@@ -274,22 +272,22 @@ C {lab_wire.sym} 370 -140 3 1 {name=p28 sig_type=std_logic lab=P1
 C {lab_wire.sym} 370 -270 3 1 {name=p29 sig_type=std_logic lab=VSS}
 C {capa.sym} 990 -650 3 0 {name=C1
 m=1
-value=0.4p
+value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 990 -310 3 0 {name=C2
 m=1
-value=0.4p
+value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 1500 -310 3 0 {name=C3
 m=1
-value=0.4p
+value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 1490 -650 3 0 {name=C4
 m=1
-value=0.4p
+value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 230 -360 3 0 {name=C5
@@ -302,3 +300,5 @@ m=1
 value=0.4p
 footprint=1206
 device="ceramic capacitor"}
+C {DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -620 0 0 {name=x1}
+C {DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -360 2 1 {name=x2}

@@ -34,7 +34,6 @@ N 520 -630 520 -590 {lab=P1}
 N 600 -630 600 -590 {lab=RST}
 N 560 -650 560 -630 {lab=VDD}
 C {title.sym} 190 -60 0 0 {name=l1 author="Onchip"}
-C {designs/DS_modulator/integrator/xschem/integrator.sym} 560 -460 0 0 {name=x1}
 C {vsource.sym} 60 -550 0 0 {name=V1 value=1.5 savecurrent=false}
 C {vsource.sym} 120 -550 0 0 {name=V2 value=0 savecurrent=false}
 C {vdd.sym} 60 -620 0 0 {name=l2 lab=VDD}
@@ -85,7 +84,7 @@ value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
-C {devices/code_shown.sym} 820 -760 0 0 {name=NGSPICE only_toplevel=true
+C {devices/code_shown.sym} 820 -800 0 0 {name=NGSPICE only_toplevel=true
 value="
 .control
 save all
@@ -112,9 +111,10 @@ alter @Vp2[PULSE] = [ 0 3.0 $&tdelay $&trise $&tfall $&tonp2 $&Tclk ]
 ** op
 tran $&tstep $&tstop
 
-plot voutp-voutn vinp-vinn
-plot rst p1 p2
+** plot voutp-voutn vinp-vinn
+plot rst p1 p2 x1.vsp-x1.fransiscop voutp-x1.vtp
 
 write integrator_TB_TRAN.raw
 .endc
 "}
+C {DS_modulator/integrator/xschem/integrator.sym} 560 -460 0 0 {name=x1}
