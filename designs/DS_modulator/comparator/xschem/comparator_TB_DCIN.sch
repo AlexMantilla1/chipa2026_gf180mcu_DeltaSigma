@@ -25,11 +25,13 @@ N 40 80 40 240 {lab=0}
 N -180 -150 -180 120 {lab=vdd}
 N -180 -150 40 -150 {lab=vdd}
 N 40 -150 40 -80 {lab=vdd}
+N 130 -20 160 -20 {lab=vout1}
+N 130 20 160 20 {lab=vout2}
 C {vsource.sym} -330 190 0 0 {name=V1 value=0.5 savecurrent=false}
 C {vsource.sym} -250 190 0 0 {name=V2 value="PWL(0 0 500n 1)" savecurrent=false}
-C {vsource.sym} -180 190 0 0 {name=V3 value=1 savecurrent=false}
+C {vsource.sym} -180 190 0 0 {name=V3 value=1.5 savecurrent=false}
 C {gnd.sym} -210 260 0 0 {name=l1 lab=0}
-C {vsource.sym} -100 190 0 0 {name=V4 value="pulse(0 1 0 1n 1n 49n 100n)" savecurrent=false}
+C {vsource.sym} -100 190 0 0 {name=V4 value="pulse(0 1.5 0 1n 1n 49n 100n)" savecurrent=false}
 C {lab_pin.sym} -330 120 0 0 {name=p1 sig_type=std_logic lab=vin1
 }
 C {lab_pin.sym} -250 120 0 0 {name=p4 sig_type=std_logic lab=vin2}
@@ -48,3 +50,6 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
 C {schematic.sym} 30 0 0 0 {name=x1}
+C {lab_pin.sym} 160 -20 2 0 {name=p2 sig_type=std_logic lab=vout1}
+C {lab_pin.sym} 160 20 2 0 {name=p3 sig_type=std_logic lab=vout2
+}
