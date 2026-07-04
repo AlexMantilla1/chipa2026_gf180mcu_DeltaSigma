@@ -2,7 +2,7 @@
 ---
 Block of the Delta-Sigma Modulator — Chipathon 2026.
 
-#1. Overview
+1. Overview
 ---
 
 A non-overlapping clock generator is a circuit that takes an input clock signal and generates two complementary clock signals (Φ1 and Φ2) that are never active simultaneously. Unlike a simple logic inversion, which would cause phase overlap, this circuit deliberately introduces a dead time between the deactivation of one phase and the activation of the next, thereby preventing data from being incorrectly transferred between stages in a dynamic shift register. Its operation is divided into two states controlled by the transition of the input signal:
@@ -11,13 +11,13 @@ A non-overlapping clock generator is a circuit that takes an input clock signal 
 
 - **Input transition from high to low (falling edge):** The circuit pulls Φ1 to low and allows Φ2 to rise to high.
 
-#2. Function of the Nonoverlapping Clock in the Delta-Sigma Modulator
+2. Function of the Nonoverlapping Clock in the Delta-Sigma Modulator
 ---
 A Delta-Sigma Modulator (DSM) is a mixed-signal system that converts an analog input signal into a high-speed digital bit stream. It achieves this by oversampling the input at a frequency much higher than the Nyquist frequency and shaping the quantization noise so that it falls outside the band of interest, where it can be removed by a digital decimation filter.
 
 For the modulator’s feedback loop to function correctly, the sampling and integration operations must occur at precise, non-overlapping times. The non-overlapping clock generator is the circuit responsible for producing the two clock phases (Φ1 and Φ2) that control the switches of the switched integrators. Unlike a simple logic inverter, this generator deliberately introduces a dead time between the deactivation of one phase and the activation of the next, ensuring that Φ1 and Φ2 are never active simultaneously.
 
-#3. Short Analysis
+3. Short Analysis
 ---
 
 [Schematic of the nonoverlapping clock generator](./images/sch_noc.png)
@@ -54,7 +54,7 @@ $$
 \phi_{2LH} = d_{NAND} + d_{d} + d_{NAND2} + d_{d2} + d_{INV2}
 $$
 
-#4. Specifications
+4. Specifications
 ---
 
 The following table presents the main specifications that we are aiming to achieve for this design. The values presented here will be measured both in schematic (Sch) simulations and post-layout (PL) simulations.
@@ -64,7 +64,7 @@ The following table presents the main specifications that we are aiming to achie
 | $V_{DD}$ | V | 1.35 | 1.5 | 1.65 | — | 1.5 | — | — | — | — | ±10% |
 | $f_{clk}$ | MHz | 4 | 4.5 | 5 | — | 4.5 | — | — | — | — | Modulator clock rate |
 | $t_{dead}$ | ns | 10 | — | — | — | 16.36 | — | — | — | — | Dead time between 6.67% of $\phi_1$ and 6.67% of $\phi_2$; for $C_L$ = 50 fF |
-| $P_{avg}$ | µW | — | TBD | — | — | - | — | — | — | — | Power consumed by the circuit; for $C_L$ = 50 fF |
+| $P_{avg}$ | µW | — | TBD | — | — | 6.5 | — | — | — | — | Power consumed by the circuit; for $C_L$ = 50 fF |
 
 #References
 ---
