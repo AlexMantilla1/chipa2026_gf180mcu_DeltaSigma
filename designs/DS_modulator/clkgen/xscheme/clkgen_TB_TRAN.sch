@@ -42,27 +42,53 @@ device=polarized_capacitor}
 C {lab_wire.sym} 0 0 0 0 {name=p1 sig_type=std_logic lab=clk}
 C {lab_wire.sym} 250 -20 0 0 {name=p2 sig_type=std_logic lab=Out1}
 C {lab_wire.sym} 230 20 0 0 {name=p3 sig_type=std_logic lab=Out2}
-C {devices/code_shown.sym} -630 210 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} -170 -380 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
-C {devices/code_shown.sym} -640 -320 0 0 {name=NGSPICE only_toplevel=true
+C {devices/code_shown.sym} -850 -460 0 0 {name=NGSPICE only_toplevel=true
 value="
 
 .control
 save all
 
 alter @Vclk[DC]=0
-alter @Vclk[PULSE] = [ 0 1.5 1u 10n 10n 0.49u 1u ]
+alter @Vclk[PULSE] = [ 0 1.5 1u 10n 10n 0.111u 0.222u ]
 
 ** SIM **
 let tstep = 1n
-let tstop = 12us
+let tstop = 3us
 let tmax = 1n
 
 tran $&tstep $&tstop 0 $&tmax
+
+*--------------------------------------------------
+* MEDICIÓN DEL DELAY
+*--------------------------------------------------
+
+meas tran tphl1 TRIG v(clk)  VAL=0.75 FALL=1 TARG v(Out1) VAL=0.75 FALL=1
+
+meas tran tplh1 TRIG v(clk)  VAL=0.75 RISE=1 TARG v(Out1) VAL=0.75 RISE=1
+
+meas tran tphl2 TRIG v(clk)  VAL=0.75 RISE=1 TARG v(Out2) VAL=0.75 FALL=1
+
+meas tran tplh2 TRIG v(clk)  VAL=0.75 FALL=1 TARG v(Out2) VAL=0.75 RISE=1
+
+meas tran tdead1 TRIG v(Out1)  VAL=0.1 FALL=1 TARG v(Out2) VAL=0.1 RISE=1
+
+meas tran tdead2 TRIG v(Out2)  VAL=0.1 FALL=1 TARG v(Out1) VAL=0.1 RISE=1
+
+*--------------------------------------------------
+* MEDICIÓN DEL PAVG
+*--------------------------------------------------
+
+meas tran Iavg AVG i(V1)
+let Pavg = 1.5*abs(Iavg)
+print Pavg
+
+*--------------------------------------------------
 
 setplot clk
 plot v(clk)

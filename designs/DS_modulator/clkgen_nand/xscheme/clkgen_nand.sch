@@ -37,7 +37,7 @@ N 270 -190 270 -150 {lab=VDD}
 N 260 -190 270 -190 {lab=VDD}
 N 170 -240 170 -220 {lab=VDD}
 C {symbols/nfet_03v3.sym} 140 40 0 0 {name=M1
-L=0.28u
+L=3.16u
 W=0.22u
 nf=1
 m=1
@@ -51,7 +51,7 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 140 -60 0 0 {name=M2
-L=0.28u
+L=3.16u
 W=0.22u
 nf=1
 m=1
@@ -65,7 +65,7 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 40 -150 0 0 {name=M3
-L=0.28u
+L=3.16u
 W=0.22u
 nf=1
 m=1
@@ -79,7 +79,7 @@ model=pfet_03v3
 spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 240 -150 0 0 {name=M5
-L=0.28u
+L=3.16u
 W=0.22u
 nf=1
 m=1

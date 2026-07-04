@@ -54,17 +54,17 @@ N -160 -260 -50 -260 {lab=VDD}
 N -380 -100 -350 -100 {lab=VSS}
 N -380 -100 -380 100 {lab=VSS}
 N -380 100 -50 100 {lab=VSS}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} 130 30 0 0 {name=x1}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} 340 30 0 0 {name=x2}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} 120 -190 0 0 {name=x3}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} 340 -190 0 0 {name=x4}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} 600 30 0 0 {name=x5}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} 600 -190 0 0 {name=x6}
 C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_inv_L0d28/xschem/gate_inv_L0d28.sym} -280 -100 1 0 {name=x7}
 C {ipin.sym} -330 -210 0 0 {name=p1 lab=clk}
 C {opin.sym} 780 -190 0 0 {name=p2 lab=OUT1}
 C {opin.sym} 780 30 0 0 {name=p3 lab=OUT2}
 C {iopin.sym} 250 -280 3 0 {name=p4 lab=VDD}
 C {iopin.sym} 250 120 1 0 {name=p5 lab=VSS}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_nand/xscheme/gate_nand.sym} -50 -190 0 0 {name=x8}
-C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/gate_nand/xscheme/gate_nand.sym} -50 30 0 0 {name=x9}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_inv/xscheme/clkgen_inv.sym} 70 30 0 0 {name=x1}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_inv/xscheme/clkgen_inv.sym} 280 30 0 0 {name=x2}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_inv/xscheme/clkgen_inv.sym} 540 30 0 0 {name=x3}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_inv/xscheme/clkgen_inv.sym} 540 -190 0 0 {name=x6}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_inv/xscheme/clkgen_inv.sym} 60 -190 0 0 {name=x4}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_inv/xscheme/clkgen_inv.sym} 280 -190 0 0 {name=x5}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_nand/xscheme/clkgen_nand.sym} -50 -190 0 0 {name=x8}
+C {chipaton/chipa2026_gf180mcu_DeltaSigma/designs/DS_modulator/clkgen_nand/xscheme/clkgen_nand.sym} -50 30 0 0 {name=x9}
