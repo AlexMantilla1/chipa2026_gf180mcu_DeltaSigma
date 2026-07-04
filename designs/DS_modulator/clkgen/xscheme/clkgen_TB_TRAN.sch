@@ -99,6 +99,8 @@ plot v(Out1)
 setplot Out2
 plot v(Out2)
 
+plot v(Out1) v(Out2)
+
 write clkgen_TB_TRAN.raw
 .endc
 "}
