@@ -61,9 +61,9 @@ N 370 -840 370 -800 {lab=P1}
 N 370 -180 370 -140 {lab=P1}
 N 600 -620 680 -620 {lab=Voutp}
 N 600 -360 680 -360 {lab=Vuotn}
-N 500 -560 500 -420 {lab=#net7}
-N 500 -760 500 -680 {lab=#net8}
-N 500 -300 500 -220 {lab=#net9}
+N 500 -560 500 -420 {lab=VSS}
+N 500 -760 500 -680 {lab=VDD}
+N 500 -300 500 -220 {lab=VDD}
 N 120 -620 200 -620 {lab=Vinp}
 N 120 -360 200 -360 {lab=Vinn}
 N 840 -480 920 -480 {lab=Vinp}
@@ -272,22 +272,22 @@ C {lab_wire.sym} 370 -140 3 1 {name=p28 sig_type=std_logic lab=P1
 C {lab_wire.sym} 370 -270 3 1 {name=p29 sig_type=std_logic lab=VSS}
 C {capa.sym} 990 -650 3 0 {name=C1
 m=1
-value=1p
+value=0.4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 990 -310 3 0 {name=C2
 m=1
-value=1p
+value=0.4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 1500 -310 3 0 {name=C3
 m=1
-value=1p
+value=0.4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 1490 -650 3 0 {name=C4
 m=1
-value=1p
+value=0.4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 230 -360 3 0 {name=C5
@@ -300,5 +300,8 @@ m=1
 value=0.4p
 footprint=1206
 device="ceramic capacitor"}
-C {DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -620 0 0 {name=x1}
-C {DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -360 2 1 {name=x2}
+C {designs/DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -620 0 0 {name=x1}
+C {designs/DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -360 2 1 {name=x2}
+C {lab_wire.sym} 500 -760 0 0 {name=p30 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 500 -220 0 0 {name=p31 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 500 -490 0 0 {name=p32 sig_type=std_logic lab=VSS}

@@ -299,6 +299,6 @@ m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {DS_modulator/ring_amp_diff/xschem/ring_amp_diff.sym} 860 -620 0 0 {name=x1}
 C {lab_wire.sym} 620 -840 0 0 {name=p36 sig_type=std_logic lab=FransiscoP}
 C {lab_wire.sym} 620 -400 0 0 {name=p37 sig_type=std_logic lab=FransiscoN}
+C {designs/DS_modulator/ring_amp_diff/xschem/ring_amp_diff.sym} 860 -620 0 0 {name=x1}

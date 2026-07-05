@@ -23,9 +23,9 @@ N 600 -330 600 -290 {lab=Vcm}
 N 60 -400 60 -360 {lab=RST}
 N 60 -300 60 -260 {lab=0}
 N 120 -300 120 -260 {lab=0}
-N 120 -420 120 -360 {lab=P1}
+N 120 -420 120 -360 {lab=P2}
 N 180 -300 180 -260 {lab=0}
-N 180 -420 180 -360 {lab=P2}
+N 180 -420 180 -360 {lab=P1}
 N 60 -420 60 -400 {lab=RST}
 N 660 -500 710 -500 {lab=Voutp}
 N 660 -420 710 -420 {lab=Voutn}
@@ -66,8 +66,10 @@ C {vsource.sym} 180 -330 0 0 {name=Vp2 value=3.0 savecurrent=false}
 C {gnd.sym} 180 -260 0 0 {name=l12 lab=0}
 C {lab_wire.sym} 60 -420 0 0 {name=p7 sig_type=std_logic lab=RST
 }
-C {lab_wire.sym} 120 -420 0 0 {name=p8 sig_type=std_logic lab=P1}
-C {lab_wire.sym} 180 -420 0 0 {name=p9 sig_type=std_logic lab=P2}
+C {lab_wire.sym} 120 -420 0 0 {name=p8 sig_type=std_logic lab=P2
+}
+C {lab_wire.sym} 180 -420 0 0 {name=p9 sig_type=std_logic lab=P1
+}
 C {lab_wire.sym} 430 -500 0 0 {name=p10 sig_type=std_logic lab=Vinp}
 C {lab_wire.sym} 430 -420 0 0 {name=p11 sig_type=std_logic lab=Vinn
 }
@@ -112,9 +114,11 @@ alter @Vp2[PULSE] = [ 0 3.0 $&tdelay $&trise $&tfall $&tonp2 $&Tclk ]
 tran $&tstep $&tstop
 
 ** plot voutp-voutn vinp-vinn
-plot rst p1 p2 x1.vsp-x1.fransiscop voutp-x1.vtp
+plot rst p1 p2 
+plot x1.vsp-x1.fransiscop voutp-x1.vtp
+plot x1.x1.x1.vout2p x1.x1.x1.vout2n
 
 write integrator_TB_TRAN.raw
 .endc
 "}
-C {DS_modulator/integrator/xschem/integrator.sym} 560 -460 0 0 {name=x1}
+C {designs/DS_modulator/integrator/xschem/integrator.sym} 560 -460 0 0 {name=x1}
