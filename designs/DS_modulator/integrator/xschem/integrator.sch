@@ -36,7 +36,7 @@ N 810 -840 890 -840 {lab=Vtp}
 N 850 -1010 850 -840 {lab=Vtp}
 N 850 -1010 880 -1010 {lab=Vtp}
 N 780 -920 780 -880 {lab=P2}
-N 920 -1090 920 -1050 {lab=xxx}
+N 920 -1090 920 -1050 {lab=RST}
 N 1010 -650 1050 -650 {lab=Voutp}
 N 1050 -840 1050 -650 {lab=Voutp}
 N 970 -840 1050 -840 {lab=Voutp}
@@ -158,18 +158,6 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/cap_mim_1f0fF.sym} 460 -840 3 0 {name=C1
-W=1e-6
-L=1e-6
-model=cap_mim_1f0fF
-spiceprefix=X
-m=1}
-C {symbols/cap_mim_1f0fF.sym} 920 -840 3 0 {name=C2
-W=1e-6
-L=1e-6
-model=cap_mim_1f0fF
-spiceprefix=X
-m=1}
 C {lab_wire.sym} 480 -730 0 0 {name=p1 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 240 -920 3 0 {name=p2 sig_type=std_logic lab=P1}
 C {lab_wire.sym} 640 -730 0 0 {name=p3 sig_type=std_logic lab=P1}
@@ -247,18 +235,6 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/cap_mim_1f0fF.sym} 460 -400 3 1 {name=C3
-W=1e-6
-L=1e-6
-model=cap_mim_1f0fF
-spiceprefix=X
-m=1}
-C {symbols/cap_mim_1f0fF.sym} 920 -400 3 1 {name=C4
-W=1e-6
-L=1e-6
-model=cap_mim_1f0fF
-spiceprefix=X
-m=1}
 C {lab_wire.sym} 480 -510 2 1 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 240 -320 3 1 {name=p8 sig_type=std_logic lab=P1}
 C {lab_wire.sym} 640 -510 2 1 {name=p9 sig_type=std_logic lab=P1}
@@ -304,3 +280,23 @@ C {lab_wire.sym} 920 -970 3 0 {name=p34 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 920 -270 3 1 {name=p35 sig_type=std_logic lab=VSS
 }
+C {capa.sym} 460 -840 1 0 {name=C5
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {capa.sym} 920 -840 1 0 {name=C6
+m=1
+value=4p
+footprint=1206
+device="ceramic capacitor"}
+C {capa.sym} 460 -400 1 0 {name=C1
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {capa.sym} 920 -400 1 0 {name=C2
+m=1
+value=4p
+footprint=1206
+device="ceramic capacitor"}
