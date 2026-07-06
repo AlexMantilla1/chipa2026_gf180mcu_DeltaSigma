@@ -26,13 +26,13 @@ N 1640 -140 1640 -80 {lab=VSS}
 N 2110 -140 2150 -140 {lab=VSS}
 N 2110 -140 2110 -80 {lab=VSS}
 N 2080 -80 2110 -80 {lab=VSS}
-N 40 -290 40 -180 {lab=CLK}
-N 40 -290 70 -290 {lab=CLK}
-N 40 -180 70 -180 {lab=CLK}
-N 110 -290 130 -290 {lab=VDD}
-N 110 -180 150 -180 {lab=VSS}
-N 150 -180 150 -80 {lab=VSS}
-N 110 -150 110 -80 {lab=VSS}
+N 270 -290 270 -180 {lab=CLK}
+N 270 -290 300 -290 {lab=CLK}
+N 270 -180 300 -180 {lab=CLK}
+N 340 -290 360 -290 {lab=VDD}
+N 340 -180 380 -180 {lab=VSS}
+N 380 -180 380 -80 {lab=VSS}
+N 340 -150 340 -80 {lab=VSS}
 N 1610 -220 1670 -220 {lab=VSS}
 N 1610 -270 1610 -250 {lab=QN}
 N 1790 -270 1790 -220 {lab=QN}
@@ -71,14 +71,12 @@ N 1640 -80 1670 -80 {lab=VSS}
 N 2080 -220 2150 -220 {lab=VSS}
 N 2080 -220 2080 -80 {lab=VSS}
 N 2010 -80 2080 -80 {lab=VSS}
-N 110 -80 150 -80 {lab=VSS}
-N 110 -380 130 -380 {lab=VDD}
-N 110 -380 110 -320 {lab=VDD}
-N 130 -380 130 -290 {lab=VDD}
+N 340 -380 340 -320 {lab=VDD}
+N 360 -380 360 -290 {lab=VDD}
 N 2050 -290 2050 -280 {lab=Q}
 N 1970 -80 2010 -80 {lab=VSS}
 N 1910 -320 1910 -270 {lab=QN}
-N 110 -260 110 -210 {lab=CLKN}
+N 340 -260 340 -210 {lab=CLKN}
 N 2150 -190 2150 -170 {lab=#net1}
 N 1610 -190 1610 -170 {lab=#net2
 }
@@ -101,13 +99,6 @@ N 620 -140 620 -80 {lab=VSS}
 N 1090 -140 1130 -140 {lab=VSS}
 N 1090 -140 1090 -80 {lab=VSS}
 N 1060 -80 1090 -80 {lab=VSS}
-N 260 -290 260 -180 {lab=D}
-N 260 -290 290 -290 {lab=D}
-N 260 -180 290 -180 {lab=D}
-N 330 -290 350 -290 {lab=VDD}
-N 330 -180 370 -180 {lab=VSS}
-N 370 -180 370 -80 {lab=VSS}
-N 330 -150 330 -80 {lab=VSS}
 N 590 -220 650 -220 {lab=VSS}
 N 590 -270 590 -250 {lab=QMN}
 N 770 -270 770 -220 {lab=QMN}
@@ -146,14 +137,9 @@ N 620 -80 650 -80 {lab=VSS}
 N 1060 -220 1130 -220 {lab=VSS}
 N 1060 -220 1060 -80 {lab=VSS}
 N 990 -80 1060 -80 {lab=VSS}
-N 330 -80 370 -80 {lab=VSS}
-N 330 -380 350 -380 {lab=VDD}
-N 330 -380 330 -320 {lab=VDD}
-N 350 -380 350 -290 {lab=VDD}
 N 1030 -290 1030 -280 {lab=QM}
 N 950 -80 990 -80 {lab=VSS}
 N 890 -320 890 -270 {lab=QMN}
-N 330 -260 330 -210 {lab=DN}
 N 1130 -190 1130 -170 {lab=#net3}
 N 590 -190 590 -170 {lab=#net4
 }
@@ -164,21 +150,21 @@ N 1130 -80 1610 -80 {lab=VSS}
 N 1520 -220 1570 -220 {lab=CLK}
 N 1060 -380 1670 -380 {lab=VDD}
 N 650 -380 680 -380 {lab=VDD}
-N 350 -380 650 -380 {lab=VDD}
-N 130 -380 330 -380 {lab=VDD}
+N 360 -380 650 -380 {lab=VDD}
 N 590 -80 620 -80 {lab=VSS}
-N 370 -80 590 -80 {lab=VSS}
-N 150 -80 330 -80 {lab=VSS}
+N 380 -80 590 -80 {lab=VSS}
 N 510 -140 550 -140 {lab=D}
 N 520 -220 550 -220 {lab=CLKN}
-C {ipin.sym} 40 -210 0 0 {name=p9 lab=CLK
+N 340 -80 380 -80 {lab=VSS}
+N 340 -380 360 -380 {lab=VDD}
+C {ipin.sym} 270 -210 0 0 {name=p9 lab=CLK
 
 }
 C {opin.sym} 1610 -270 2 0 {name=p8 lab=QN}
 C {opin.sym} 2150 -260 0 0 {name=p10 lab=Q
 }
 C {lab_wire.sym} 2240 -220 0 0 {name=p1 sig_type=std_logic lab=CLK}
-C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/pfet_03v3.sym} 90 -290 0 0 {name=M2
+C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/pfet_03v3.sym} 320 -290 0 0 {name=M2
 L=0.28u
 W=0.22u
 nf=1
@@ -248,7 +234,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/nfet_03v3.sym} 90 -180 0 0 {name=M10
+C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/nfet_03v3.sym} 320 -180 0 0 {name=M10
 L=0.28u
 W=0.22u
 nf=1
@@ -321,26 +307,12 @@ spiceprefix=X
 C {lab_wire.sym} 520 -220 0 0 {name=p4 sig_type=std_logic lab=CLKN
 }
 C {lab_wire.sym} 2220 -140 0 0 {name=p6 sig_type=std_logic lab=QMN}
-C {lab_wire.sym} 110 -230 0 1 {name=p7 sig_type=std_logic lab=CLKN
+C {lab_wire.sym} 340 -230 0 1 {name=p7 sig_type=std_logic lab=CLKN
 }
-C {ipin.sym} 260 -250 0 0 {name=p5 lab=D}
+C {ipin.sym} 510 -140 0 0 {name=p5 lab=D}
 C {lab_wire.sym} 1220 -220 0 0 {name=p13 sig_type=std_logic lab=CLKN}
 C {iopin.sym} 1040 -380 3 0 {name=p14 lab=VDD}
 C {iopin.sym} 1020 -80 1 0 {name=p15 lab=VSS
-}
-C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/pfet_03v3.sym} 310 -290 0 0 {name=M11
-L=0.28u
-W=0.22u
-nf=1
-m=1
-ad="'int((nf+1)/2) * W/nf * 0.18u'"
-pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
-as="'int((nf+2)/2) * W/nf * 0.18u'"
-ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
-nrd="'0.18u / W'" nrs="'0.18u / W'"
-sa=0 sb=0 sd=0
-model=pfet_03v3
-spiceprefix=X
 }
 C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/nfet_03v3.sym} 1150 -220 0 1 {name=M12
 L=0.28u
@@ -387,20 +359,6 @@ spiceprefix=X
 C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/nfet_03v3.sym} 930 -190 0 0 {name=M15
 L=0.28u
 W=0.5u
-nf=1
-m=1
-ad="'int((nf+1)/2) * W/nf * 0.18u'"
-pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
-as="'int((nf+2)/2) * W/nf * 0.18u'"
-ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
-nrd="'0.18u / W'" nrs="'0.18u / W'"
-sa=0 sb=0 sd=0
-model=nfet_03v3
-spiceprefix=X
-}
-C {/foss/pdks/gf180mcuD/libs.tech/xschem/symbols/nfet_03v3.sym} 310 -180 0 0 {name=M16
-L=0.28u
-W=0.22u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -468,12 +426,8 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 510 -140 0 0 {name=p16 sig_type=std_logic lab=D}
-C {lab_wire.sym} 1200 -140 0 0 {name=p17 sig_type=std_logic lab=DN
-}
-C {lab_wire.sym} 330 -230 0 1 {name=p18 sig_type=std_logic lab=DN
-}
 C {lab_wire.sym} 610 -270 0 0 {name=p2 sig_type=std_logic lab=QMN}
 C {lab_wire.sym} 1080 -260 0 1 {name=p3 sig_type=std_logic lab=QM}
 C {lab_wire.sym} 1550 -220 0 0 {name=p11 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1550 -140 0 0 {name=p12 sig_type=std_logic lab=QM}
+C {ipin.sym} 1210 -140 2 0 {name=p16 lab=DN}
