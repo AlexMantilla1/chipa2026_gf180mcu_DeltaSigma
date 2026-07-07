@@ -75,6 +75,7 @@ N 1350 -180 1350 -140 {lab=P2}
 N 370 -760 370 -680 {lab=VSS}
 N 370 -300 370 -220 {lab=VSS}
 N 1240 -480 1240 -430 {lab=Vcm}
+N 430 -760 460 -760 {lab=#net5}
 C {title.sym} 290 -70 0 0 {name=l1 author="Onchip"}
 C {symbols/nfet_03v3.sym} 1350 -200 3 0 {name=M1
 L=0.28u

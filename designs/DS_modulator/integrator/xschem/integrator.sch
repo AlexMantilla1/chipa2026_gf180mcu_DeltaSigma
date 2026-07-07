@@ -286,7 +286,7 @@ footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 920 -840 1 0 {name=C6
 m=1
-value=1p
+value=4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -400 1 0 {name=C1
@@ -296,7 +296,7 @@ footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 920 -400 1 0 {name=C2
 m=1
-value=1p
+value=4p
 footprint=1206
 device="ceramic capacitor"}
 C {lab_wire.sym} 620 -840 0 0 {name=p36 sig_type=std_logic lab=FransiscoP}
