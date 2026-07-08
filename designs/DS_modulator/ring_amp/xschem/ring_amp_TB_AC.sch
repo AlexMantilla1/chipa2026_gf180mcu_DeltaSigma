@@ -27,8 +27,8 @@ footprint=1206
 device="ceramic capacitor"}
 C {vdd.sym} 450 -620 0 0 {name=l2 lab=VDD}
 C {vdd.sym} 150 -540 0 0 {name=l3 lab=VDD}
-C {vsource.sym} 150 -470 0 0 {name=V1 value=1.5 savecurrent=false}
-C {vsource.sym} 250 -450 0 0 {name=V2 value=0.75 savecurrent=false}
+C {vsource.sym} 150 -470 0 0 {name=V1 value=1.8 savecurrent=false}
+C {vsource.sym} 250 -450 0 0 {name=V2 value=0.85 savecurrent=false}
 C {gnd.sym} 150 -400 0 0 {name=l5 lab=0}
 C {gnd.sym} 250 -380 0 0 {name=l6 lab=0}
 C {gnd.sym} 590 -390 0 0 {name=l8 lab=0}
@@ -38,13 +38,13 @@ value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
-C {devices/code_shown.sym} 760 -1020 0 0 {name=NGSPICE only_toplevel=true
+C {devices/code_shown.sym} 820 -1220 0 0 {name=NGSPICE only_toplevel=true
 value="
 .control
 save all
 
 ** Polarizacion de entrada
-alter @V2[DC] = 0.75
+alter @V2[DC] = 0.85
 alter @V2[AC] = 1
 
 ** Parametros AC
@@ -61,6 +61,15 @@ ac dec $&npts $&fstart $&fstop
 plot db(v(Vout))
 plot ph(v(Vout))*180/pi
 
+let A0 = db(v(vout)[0])
+print A0
+
+let gain = db(v(vout))
+let phase = ph(v(vout))*180/pi
+
+meas ac UGF when gain=0
+meas ac PH find phase at=UGF
+
 setplot op1
 
 let I1 = v.x1.v1#branch
@@ -72,6 +81,7 @@ let vout2p = x1.vout2p
 let vout2n = x1.vout2n
 let vdz = x1.vout2p-x1.vout2n
 
+print vin
 print vout1
 print I1
 print vout2p

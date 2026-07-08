@@ -40,7 +40,7 @@ N 760 -540 760 -500 {lab=Voutp}
 N 760 -640 760 -600 {lab=0}
 N 750 -500 760 -500 {lab=Voutp}
 C {title.sym} 190 -60 0 0 {name=l1 author="Onchip"}
-C {vsource.sym} 60 -550 0 0 {name=V1 value=1.6 savecurrent=false}
+C {vsource.sym} 60 -550 0 0 {name=V1 value=1.8 savecurrent=false}
 C {vsource.sym} 120 -550 0 0 {name=V2 value=0 savecurrent=false}
 C {vdd.sym} 60 -620 0 0 {name=l2 lab=VDD}
 C {vdd.sym} 560 -650 0 0 {name=l3 lab=VDD}
@@ -50,7 +50,7 @@ C {lab_wire.sym} 120 -640 0 0 {name=p1 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 560 -290 0 0 {name=p2 sig_type=std_logic lab=VSS
 }
-C {vsource.sym} 180 -550 0 0 {name=V3 value=0.8 savecurrent=false}
+C {vsource.sym} 180 -550 0 0 {name=V3 value=0.9 savecurrent=false}
 C {gnd.sym} 180 -480 0 0 {name=l8 lab=0}
 C {lab_wire.sym} 180 -640 0 0 {name=p3 sig_type=std_logic lab=Vcm
 }
@@ -62,11 +62,11 @@ C {lab_wire.sym} 260 -420 0 0 {name=p5 sig_type=std_logic lab=Vcm
 }
 C {lab_wire.sym} 600 -290 0 0 {name=p6 sig_type=std_logic lab=Vcm
 }
-C {vsource.sym} 60 -330 0 0 {name=Vrst value=3.0 savecurrent=false}
-C {vsource.sym} 120 -330 0 0 {name=Vp1 value=3.0 savecurrent=false}
+C {vsource.sym} 60 -330 0 0 {name=Vrst value=3.6 savecurrent=false}
+C {vsource.sym} 120 -330 0 0 {name=Vp1 value=3.6 savecurrent=false}
 C {gnd.sym} 60 -260 0 0 {name=l10 lab=0}
 C {gnd.sym} 120 -260 0 0 {name=l11 lab=0}
-C {vsource.sym} 180 -330 0 0 {name=Vp2 value=3.0 savecurrent=false}
+C {vsource.sym} 180 -330 0 0 {name=Vp2 value=3.6 savecurrent=false}
 C {gnd.sym} 180 -260 0 0 {name=l12 lab=0}
 C {lab_wire.sym} 60 -420 0 0 {name=p7 sig_type=std_logic lab=RST
 }
@@ -106,12 +106,12 @@ let tonp2 = 0.45*Tclk - trise - tfall
 
 ** Define transient params
 let tstop = 10*Tclk
-let tstep = 0.01*Tclk
+let tstep = 0.001*Tclk
 
 ** Set sources
-alter @Vrst[PULSE] = [ 0 3.2 0 $&trise $&tfall $&Tclk $&tstop ]
-alter @Vp1[PULSE] = [ 3.2 0 0 $&trise $&tfall $&tonp1 $&Tclk ]
-alter @Vp2[PULSE] = [ 0 3.2 $&tdelay $&trise $&tfall $&tonp2 $&Tclk ]
+alter @Vrst[PULSE] = [ 0 3.6 0 $&trise $&tfall $&Tclk $&tstop ]
+alter @Vp1[PULSE] = [ 3.6 0 0 $&trise $&tfall $&tonp1 $&Tclk ]
+alter @Vp2[PULSE] = [ 0 3.6 $&tdelay $&trise $&tfall $&tonp2 $&Tclk ]
 
 ** Sims
 ** op
@@ -121,6 +121,7 @@ tran $&tstep $&tstop
 plot rst/30 p1/30 p2/30 x1.vsp-x1.fransiscop voutp-x1.vtp
 plot x1.vsp-x1.fransiscop voutp-x1.vtp
 plot x1.x1.x1.vout2p x1.x1.x1.vout2n
+plot voutp-voutn
 
 write integrator_TB_TRAN.raw
 .endc

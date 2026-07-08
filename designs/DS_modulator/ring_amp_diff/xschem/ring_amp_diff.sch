@@ -46,13 +46,13 @@ N 920 -650 960 -650 {lab=Vinp}
 N 1530 -310 1560 -310 {lab=Vinn}
 N 1560 -650 1560 -310 {lab=Vinn}
 N 1520 -650 1560 -650 {lab=Vinn}
-N 460 -760 460 -680 {lab=#net5}
-N 400 -760 460 -760 {lab=#net5}
+N 460 -760 460 -680 {lab=xxx}
+N 400 -760 460 -760 {lab=xxx}
 N 260 -620 400 -620 {lab=Vxp}
 N 300 -760 340 -760 {lab=Vxp}
 N 300 -760 300 -620 {lab=Vxp}
-N 460 -300 460 -220 {lab=#net6}
-N 400 -220 460 -220 {lab=#net6}
+N 460 -300 460 -220 {lab=#net5}
+N 400 -220 460 -220 {lab=#net5}
 N 300 -220 340 -220 {lab=Vxn}
 N 300 -360 300 -220 {lab=Vxn}
 N 300 -360 400 -360 {lab=Vxn}
@@ -75,7 +75,7 @@ N 1350 -180 1350 -140 {lab=P2}
 N 370 -760 370 -680 {lab=VSS}
 N 370 -300 370 -220 {lab=VSS}
 N 1240 -480 1240 -430 {lab=Vcm}
-N 430 -760 460 -760 {lab=#net5}
+N 430 -760 460 -760 {lab=xxx}
 C {title.sym} 290 -70 0 0 {name=l1 author="Onchip"}
 C {symbols/nfet_03v3.sym} 1350 -200 3 0 {name=M1
 L=0.28u
@@ -306,3 +306,7 @@ C {designs/DS_modulator/ring_amp/xschem/ring_amp.sym} 480 -360 2 1 {name=x2}
 C {lab_wire.sym} 500 -760 0 0 {name=p30 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 500 -220 0 0 {name=p31 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 500 -490 0 0 {name=p32 sig_type=std_logic lab=VSS}
+C {lab_wire.sym} 460 -700 0 0 {name=p33 sig_type=std_logic lab=Vout1n
+}
+C {lab_wire.sym} 460 -260 0 0 {name=p34 sig_type=std_logic lab=Vout1p
+}
