@@ -4,5 +4,10 @@ gf180mcu/
 gf180_drc.lyrdb
 sim_build/
 final/ 
+final/
+img/
+# keep documentation figures under designs/ (negation must re-include the dir too)
+!designs/DS_modulator/**/img/
+!designs/DS_modulator/**/img/**
 *.lyrdb
 generated_defines.svh
