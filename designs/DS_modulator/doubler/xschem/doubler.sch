@@ -5,21 +5,16 @@ V {}
 S {}
 F {}
 E {}
-N 640 -360 770 -360 {lab=#net1}
+N 640 -360 770 -360 {lab=Vcd_up}
 N 910 -360 910 -320 {lab=CLKD}
 N 830 -360 910 -360 {lab=CLKD}
 N 910 -360 970 -360 {lab=CLKD}
-N 510 -230 640 -230 {lab=#net2}
+N 510 -230 640 -230 {lab=Vcd_down}
 N 640 -150 640 -100 {lab=VSS}
 N 640 -510 640 -470 {lab=VDD}
-N 670 -290 670 -260 {lab=#net2}
-N 610 -260 670 -260 {lab=#net2}
-N 610 -290 610 -260 {lab=#net2}
 N 390 -230 450 -230 {lab=VDD}
 N 910 -260 910 -210 {lab=VSS}
-N 640 -440 680 -440 {lab=VDD}
-N 680 -480 680 -440 {lab=VDD}
-N 640 -480 680 -480 {lab=VDD}
+N 640 -440 680 -440 {lab=Vcd_up}
 N 480 -270 480 -230 {lab=VDD}
 N 430 -270 480 -270 {lab=VDD}
 N 430 -270 430 -230 {lab=VDD}
@@ -35,16 +30,12 @@ N 480 -180 560 -180 {lab=CLKb}
 N 800 -320 800 -290 {lab=CLKb}
 N 800 -290 870 -290 {lab=CLKb}
 N 540 -440 600 -440 {lab=CLKD}
-N 800 -430 800 -360 {lab=VDD}
-N 640 -360 640 -330 {lab=#net1}
-N 640 -410 640 -360 {lab=#net1}
-N 640 -260 640 -230 {lab=#net2}
-N 640 -290 640 -280 {lab=#net3}
-N 640 -280 640 -270 {lab=#net3}
-N 640 -270 680 -270 {lab=#net3}
+N 800 -430 800 -360 {lab=Vcd_up}
+N 640 -410 640 -360 {lab=Vcd_up}
+N 640 -260 640 -230 {lab=Vcd_down}
 N 670 -180 680 -180 {lab=VSS}
 N 670 -140 680 -140 {lab=VSS}
-N 640 -230 640 -210 {lab=#net2}
+N 640 -230 640 -210 {lab=Vcd_down}
 N 170 -280 170 -250 {lab=CLKb}
 N 110 -310 130 -310 {lab=CLK}
 N 110 -310 110 -220 {lab=CLK}
@@ -59,53 +50,23 @@ N 200 -340 200 -310 {lab=VDD}
 N 170 -220 210 -220 {lab=VSS}
 N 210 -220 210 -190 {lab=VSS}
 N 170 -190 210 -190 {lab=VSS}
-C {symbols/nfet_03v3.sym} 620 -180 0 0 {name=M1
-<<<<<<< HEAD
-=======
-N 60 -120 60 -60 \{lab=#net1}
-C {symbols/pfet_03v3.sym} 620 -440 0 0 {name=M3
-=======
-C \{symbols/pfet_03v3.sym}
-C {symbols/pfet_03v3.sym} 480 -210 3 0 {name=M4
-=======
-C \{symbols/pfet_03v3.sym}
-C {symbols/nfet_03v3.sym} 890 -290 0 0 {name=M5
-=======
-C \{symbols/nfet_03v3.sym}
-C {symbols/pfet_03v3.sym} 800 -340 3 0 {name=M6
-=======
-C \{symbols/pfet_03v3.sym}
-=======
-L=0.28u
-W=0.22u
-nf=1
-m=1
-ad="'int((nf+1)/2) * W/nf * 0.18u'"
-pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
-as="'int((nf+2)/2) * W/nf * 0.18u'"
-ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
-nrd="'0.18u / W'" nrs="'0.18u / W'"
-sa=0 sb=0 sd=0
-model=nfet_03v3
-spiceprefix=X
-}
-C {symbols/pfet_03v3.sym} 620 -440 0 0 {name=M3
-L=0.28u
-W=0.22u
-nf=1
-m=1
-ad="'int((nf+1)/2) * W/nf * 0.18u'"
-pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
-as="'int((nf+2)/2) * W/nf * 0.18u'"
-ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
-nrd="'0.18u / W'" nrs="'0.18u / W'"
-sa=0 sb=0 sd=0
-model=pfet_03v3
-spiceprefix=X
-}
+N 640 -270 640 -260 {lab=Vcd_down}
+N 600 -310 610 -310 {lab=Vcd_up}
+N 600 -330 600 -310 {lab=Vcd_up}
+N 600 -330 680 -330 {lab=Vcd_up}
+N 680 -330 680 -310 {lab=Vcd_up}
+N 670 -310 680 -310 {lab=Vcd_up}
+N 640 -360 640 -330 {lab=Vcd_up}
+N 640 -320 640 -310 {lab=Vcd_up}
+N 680 -440 680 -400 {lab=Vcd_up}
+N 640 -400 660 -400 {lab=Vcd_up}
+N 660 -400 680 -400 {lab=Vcd_up}
+N 750 -430 800 -430 {lab=Vcd_up}
+N 750 -430 750 -360 {lab=Vcd_up}
+N 640 -330 640 -320 {lab=Vcd_up}
 C {symbols/pfet_03v3.sym} 480 -210 3 0 {name=M4
 L=0.28u
-W=0.22u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -119,7 +80,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 890 -290 0 0 {name=M5
 L=0.28u
-W=0.22u
+W=0.5u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -133,7 +94,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 800 -340 3 0 {name=M6
 L=0.28u
-W=0.22u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -145,22 +106,6 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {symbols/nfet_03v3.sym} 640 -310 1 0 {name=M7
-L=0.28u
-W=0.22u
-nf=1
-m=1
-ad="'int((nf+1)/2) * W/nf * 0.18u'"
-pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
-as="'int((nf+2)/2) * W/nf * 0.18u'"
-ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
-nrd="'0.18u / W'" nrs="'0.18u / W'"
-sa=0 sb=0 sd=0
-model=nfet_03v3
-spiceprefix=X
-}
->>>>>>> ee3ad6b4834bdd7ef7870b8e66f1fdd2117f600e
-C {lab_pin.sym} 640 -510 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 640 -510 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 390 -230 0 0 {name=p3 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 640 -100 0 0 {name=p4 sig_type=std_logic lab=VSS}
@@ -173,11 +118,10 @@ C {iopin.sym} 30 -590 0 0 {name=p12 lab=VDD}
 C {iopin.sym} 30 -550 0 0 {name=p13 lab=VSS}
 C {iopin.sym} 30 -510 0 0 {name=p15 lab=CLK}
 C {iopin.sym} 30 -470 0 0 {name=p16 lab=CLKD}
-C {lab_pin.sym} 800 -430 0 0 {name=p17 sig_type=std_logic lab=VDD}
 C {title.sym} 160 0 0 0 {name=l1 author="R. Vergel"}
 C {symbols/pfet_03v3.sym} 620 -440 0 0 {name=M2
 L=0.28u
-W=0.22u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -191,7 +135,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 150 -310 0 0 {name=M8
 L=0.28u
-W=0.22u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -205,7 +149,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 150 -220 0 0 {name=M9
 L=0.28u
-W=0.22u
+W=0.5u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -220,13 +164,12 @@ spiceprefix=X
 C {lab_pin.sym} 170 -380 0 0 {name=p6 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 210 -260 2 0 {name=p14 sig_type=std_logic lab=CLKb}
 C {lab_pin.sym} 80 -260 0 0 {name=p18 sig_type=std_logic lab=CLK}
-<<<<<<< HEAD
 C {lab_pin.sym} 170 -140 0 1 {name=p6 sig_type=std_logic lab=VSS}
-C {symbols/pfet_03v3.sym} 640 -310 1 0 {name=M7
-L=0.28u
-W=0.22u
+C {symbols/pfet_03v3.sym} 640 -290 3 0 {name=M7
+L=10u
+W=10u
 nf=1
-m=1
+m=4
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -236,6 +179,19 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_pin.sym} 680 -270 2 0 {name=p7 sig_type=std_logic lab=VDD}
-=======
->>>>>>> ee3ad6b4834bdd7ef7870b8e66f1fdd2117f600e
+C {lab_pin.sym} 640 -390 2 1 {name=p1 sig_type=std_logic lab=Vcd_up}
+C {lab_pin.sym} 640 -250 2 1 {name=p19 sig_type=std_logic lab=Vcd_down}
+C {symbols/nfet_03v3.sym} 620 -180 0 0 {name=M1
+L=0.28u
+W=0.5u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
