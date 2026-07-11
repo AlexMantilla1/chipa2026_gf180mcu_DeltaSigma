@@ -50,7 +50,6 @@ N 200 -340 200 -310 {lab=VDD}
 N 170 -220 210 -220 {lab=VSS}
 N 210 -220 210 -190 {lab=VSS}
 N 170 -190 210 -190 {lab=VSS}
-N 60 -120 60 -60 \{lab=#net1}
 N 640 -270 640 -260 {lab=Vcd_down}
 N 600 -310 610 -310 {lab=Vcd_up}
 N 600 -330 600 -310 {lab=Vcd_up}
@@ -136,7 +135,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 150 -310 0 0 {name=M8
 L=0.28u
-W=0.55u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -150,7 +149,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 150 -220 0 0 {name=M9
 L=0.28u
-W=0.22u
+W=0.5u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -167,10 +166,10 @@ C {lab_pin.sym} 210 -260 2 0 {name=p14 sig_type=std_logic lab=CLKb}
 C {lab_pin.sym} 80 -260 0 0 {name=p18 sig_type=std_logic lab=CLK}
 C {lab_pin.sym} 170 -140 0 1 {name=p6 sig_type=std_logic lab=VSS}
 C {symbols/pfet_03v3.sym} 640 -290 3 0 {name=M7
-L=18u
-W=18u
+L=10u
+W=10u
 nf=1
-m=1
+m=4
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"

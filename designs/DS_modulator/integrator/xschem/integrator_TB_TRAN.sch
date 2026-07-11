@@ -39,6 +39,8 @@ N 760 -320 760 -280 {lab=0}
 N 760 -540 760 -500 {lab=Voutp}
 N 760 -640 760 -600 {lab=0}
 N 750 -500 760 -500 {lab=Voutp}
+N 290 -540 460 -540 {lab=VDD}
+N 290 -380 460 -380 {lab=0}
 C {title.sym} 190 -60 0 0 {name=l1 author="Onchip"}
 C {vsource.sym} 60 -550 0 0 {name=V1 value=1.8 savecurrent=false}
 C {vsource.sym} 120 -550 0 0 {name=V2 value=0 savecurrent=false}
@@ -54,8 +56,8 @@ C {vsource.sym} 180 -550 0 0 {name=V3 value=0.9 savecurrent=false}
 C {gnd.sym} 180 -480 0 0 {name=l8 lab=0}
 C {lab_wire.sym} 180 -640 0 0 {name=p3 sig_type=std_logic lab=Vcm
 }
-C {vsource.sym} 350 -500 1 0 {name=V4 value=0.05 savecurrent=false}
-C {vsource.sym} 350 -420 1 0 {name=V5 value=-0.05 savecurrent=false}
+C {vsource.sym} 350 -500 1 0 {name=V4 value=0.5 savecurrent=false}
+C {vsource.sym} 350 -420 1 0 {name=V5 value=-0.5 savecurrent=false}
 C {lab_wire.sym} 260 -500 0 0 {name=p4 sig_type=std_logic lab=Vcm
 }
 C {lab_wire.sym} 260 -420 0 0 {name=p5 sig_type=std_logic lab=Vcm
@@ -65,7 +67,6 @@ C {lab_wire.sym} 600 -290 0 0 {name=p6 sig_type=std_logic lab=Vcm
 C {vsource.sym} 60 -330 0 0 {name=Vrst value=3.6 savecurrent=false}
 C {vsource.sym} 120 -330 0 0 {name=Vp1 value=3.6 savecurrent=false}
 C {gnd.sym} 60 -260 0 0 {name=l10 lab=0}
-C {gnd.sym} 120 -260 0 0 {name=l11 lab=0}
 C {vsource.sym} 180 -330 0 0 {name=Vp2 value=3.6 savecurrent=false}
 C {gnd.sym} 180 -260 0 0 {name=l12 lab=0}
 C {lab_wire.sym} 60 -420 0 0 {name=p7 sig_type=std_logic lab=RST
@@ -96,7 +97,7 @@ value="
 save all
 
 ** Define transient signals
-let Fclk = 1e6
+let Fclk = 5e6
 let Tclk = 1/Fclk
 let trise = 0.01*Tclk
 let tfall = 0.01*Tclk
@@ -105,8 +106,8 @@ let tonp1 = 0.5*Tclk - trise - tfall
 let tonp2 = 0.45*Tclk - trise - tfall
 
 ** Define transient params
-let tstop = 10*Tclk
-let tstep = 0.001*Tclk
+let tstop = 20*Tclk
+let tstep = 0.0001*Tclk
 
 ** Set sources
 alter @Vrst[PULSE] = [ 0 3.6 0 $&trise $&tfall $&Tclk $&tstop ]
@@ -118,15 +119,15 @@ alter @Vp2[PULSE] = [ 0 3.6 $&tdelay $&trise $&tfall $&tonp2 $&Tclk ]
 tran $&tstep $&tstop
 
 ** plot voutp-voutn vinp-vinn
-plot rst/30 p1/30 p2/30 x1.vsp-x1.fransiscop voutp-x1.vtp
-plot x1.vsp-x1.fransiscop voutp-x1.vtp
-plot x1.x1.x1.vout2p x1.x1.x1.vout2n
-plot voutp-voutn
+*plot rst/30 p1/30 p2/30 x1.vsp-x1.fransiscop voutp-x1.vtp
+plot x1.vsp-x1.fransiscop voutp-x1.vtp x1.vsn-x1.fransiscon voutn-x1.vtn
+*plot x1.x1.x1.vout2p x1.x1.x1.vout2n
+plot (voutp+voutn)/2 voutp voutn vcm
 
-write integrator_TB_TRAN.raw
+
+*write integrator_TB_TRAN.raw
 .endc
 "}
-C {designs/DS_modulator/integrator/xschem/integrator.sym} 560 -460 0 0 {name=x1}
 C {capa.sym} 760 -350 0 0 {name=C1
 m=1
 value=1p
@@ -139,3 +140,7 @@ footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 760 -280 0 0 {name=l6 lab=0}
 C {gnd.sym} 760 -640 2 0 {name=l7 lab=0}
+C {DS_modulator/integrator/xschem/integrator.sym} 560 -460 0 0 {name=x1}
+C {vdd.sym} 320 -540 0 0 {name=l9 lab=VDD}
+C {gnd.sym} 120 -260 0 0 {name=l13 lab=0}
+C {gnd.sym} 320 -380 0 0 {name=l14 lab=0}

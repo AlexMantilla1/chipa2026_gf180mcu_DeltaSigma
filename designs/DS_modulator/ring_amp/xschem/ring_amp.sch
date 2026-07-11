@@ -101,7 +101,7 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 510 -310 0 0 {name=M4
-L=0.28u
+L=0.35u
 W=1u
 nf=1
 m=1
@@ -142,7 +142,7 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 780 -310 0 1 {name=M5
-L=0.28u
+L=0.35u
 W=0.8u
 nf=1
 m=4
